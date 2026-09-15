@@ -2644,6 +2644,1226 @@
         );
 
     </script>
+<!-- =========================
+     GLOW AI CHATBOT
+     Sadece bu bölümü ekle
+========================= -->
 
+<style>
+#glow-ai-button {
+    position: fixed;
+    right: 20px;
+    bottom: 90px;
+    width: 62px;
+    height: 62px;
+    border-radius: 50%;
+    border: none;
+    background: #111827;
+    color: white;
+    cursor: pointer;
+    z-index: 70;
+    box-shadow: 0 10px 30px rgba(0,0,0,.25);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: .25s ease;
+}
+
+#glow-ai-button:hover {
+    transform: scale(1.07);
+}
+
+#glow-ai-button svg {
+    width: 27px;
+    height: 27px;
+}
+
+#glow-ai-window {
+    position: fixed;
+    right: 20px;
+    bottom: 165px;
+    width: 370px;
+    max-width: calc(100vw - 30px);
+    height: 590px;
+    max-height: calc(100vh - 190px);
+    background: #fff;
+    border-radius: 24px;
+    overflow: hidden;
+    z-index: 70;
+    box-shadow: 0 25px 70px rgba(0,0,0,.25);
+    display: none;
+    flex-direction: column;
+    border: 1px solid rgba(0,0,0,.08);
+}
+
+#glow-ai-window.active {
+    display: flex;
+}
+
+#glow-ai-header {
+    background: #111827;
+    color: white;
+    padding: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.glow-ai-header-left {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.glow-ai-avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: white;
+    color: #111827;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 15px;
+}
+
+.glow-ai-title {
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.glow-ai-status {
+    font-size: 11px;
+    opacity: .7;
+    margin-top: 2px;
+}
+
+#glow-ai-close {
+    background: transparent;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 24px;
+    line-height: 1;
+}
+
+#glow-ai-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 18px;
+    background: #f7f7f7;
+}
+
+.glow-ai-message {
+    margin-bottom: 12px;
+    display: flex;
+}
+
+.glow-ai-message.bot {
+    justify-content: flex-start;
+}
+
+.glow-ai-message.user {
+    justify-content: flex-end;
+}
+
+.glow-ai-bubble {
+    max-width: 82%;
+    padding: 11px 14px;
+    border-radius: 16px;
+    font-size: 13px;
+    line-height: 1.5;
+    white-space: pre-line;
+}
+
+.bot .glow-ai-bubble {
+    background: white;
+    color: #1f2937;
+    border-bottom-left-radius: 5px;
+    box-shadow: 0 2px 8px rgba(0,0,0,.05);
+}
+
+.user .glow-ai-bubble {
+    background: #111827;
+    color: white;
+    border-bottom-right-radius: 5px;
+}
+
+#glow-ai-quick {
+    padding: 8px 14px 4px;
+    background: #fff;
+    display: flex;
+    gap: 7px;
+    overflow-x: auto;
+}
+
+.glow-ai-quick-btn {
+    flex-shrink: 0;
+    border: 1px solid #ddd;
+    background: white;
+    color: #222;
+    border-radius: 20px;
+    padding: 7px 11px;
+    font-size: 11px;
+    cursor: pointer;
+}
+
+.glow-ai-quick-btn:hover {
+    background: #f3f3f3;
+}
+
+#glow-ai-input-area {
+    background: white;
+    padding: 10px 12px 13px;
+    display: flex;
+    gap: 8px;
+    border-top: 1px solid #eee;
+}
+
+#glow-ai-input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    padding: 10px 14px;
+    outline: none;
+    font-size: 13px;
+}
+
+#glow-ai-send {
+    width: 42px;
+    height: 42px;
+    border: none;
+    border-radius: 50%;
+    background: #111827;
+    color: white;
+    cursor: pointer;
+}
+
+.glow-ai-option-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+    margin-top: 8px;
+}
+
+.glow-ai-option {
+    border: 1px solid #111827;
+    background: white;
+    color: #111827;
+    border-radius: 18px;
+    padding: 8px 12px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.glow-ai-option:hover {
+    background: #111827;
+    color: white;
+}
+
+.glow-ai-date {
+    margin-top: 8px;
+    display: flex;
+    gap: 7px;
+}
+
+.glow-ai-date input {
+    flex: 1;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 9px;
+}
+
+.glow-ai-date button {
+    border: none;
+    background: #111827;
+    color: white;
+    border-radius: 10px;
+    padding: 0 14px;
+    cursor: pointer;
+}
+
+@media (max-width: 640px) {
+    #glow-ai-button {
+        right: 16px;
+        bottom: 80px;
+    }
+
+    #glow-ai-window {
+        right: 10px;
+        bottom: 145px;
+        width: calc(100vw - 20px);
+        height: 570px;
+    }
+}
+</style>
+
+
+<!-- CHAT BUTTON -->
+<button id="glow-ai-button" aria-label="GLOW AI">
+    <svg xmlns="http://www.w3.org/2000/svg"
+         width="24" height="24"
+         viewBox="0 0 24 24"
+         fill="none"
+         stroke="currentColor"
+         stroke-width="2"
+         stroke-linecap="round"
+         stroke-linejoin="round">
+        <path d="M21 15a4 4 0 0 1-4 4H8l-5 3V7a4 4 0 0 1 4-4h10a4 4 0 0 1 4 4z"/>
+        <path d="M8 9h8"/>
+        <path d="M8 13h5"/>
+    </svg>
+</button>
+
+
+<!-- CHAT WINDOW -->
+<div id="glow-ai-window">
+
+    <div id="glow-ai-header">
+
+        <div class="glow-ai-header-left">
+
+            <div class="glow-ai-avatar">
+                G
+            </div>
+
+            <div>
+                <div class="glow-ai-title">
+                    GLOW AI
+                </div>
+
+                <div class="glow-ai-status">
+                    Dijital asistan • Genellikle hemen yanıtlar
+                </div>
+            </div>
+
+        </div>
+
+        <button id="glow-ai-close">
+            ×
+        </button>
+
+    </div>
+
+
+    <div id="glow-ai-messages"></div>
+
+
+    <div id="glow-ai-quick">
+
+        <button class="glow-ai-quick-btn" data-action="services">
+            Hizmetler
+        </button>
+
+        <button class="glow-ai-quick-btn" data-action="price">
+            Fiyat
+        </button>
+
+        <button class="glow-ai-quick-btn" data-action="appointment">
+            Randevu
+        </button>
+
+        <button class="glow-ai-quick-btn" data-action="hours">
+            Çalışma saatleri
+        </button>
+
+        <button class="glow-ai-quick-btn" data-action="location">
+            Konum
+        </button>
+
+    </div>
+
+
+    <div id="glow-ai-input-area">
+
+        <input
+            id="glow-ai-input"
+            type="text"
+            placeholder="Bir şey sorun..."
+            autocomplete="off"
+        >
+
+        <button id="glow-ai-send">
+            ➤
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+(function () {
+
+    /* =========================
+       ELEMENTLER
+    ========================= */
+
+    const button = document.getElementById("glow-ai-button");
+    const windowBox = document.getElementById("glow-ai-window");
+    const closeButton = document.getElementById("glow-ai-close");
+    const messages = document.getElementById("glow-ai-messages");
+    const input = document.getElementById("glow-ai-input");
+    const sendButton = document.getElementById("glow-ai-send");
+
+    let bookingStep = null;
+
+    let booking = {
+        service: "",
+        date: "",
+        time: "",
+        name: "",
+        phone: ""
+    };
+
+
+    /* =========================
+       HİZMETLER
+    ========================= */
+
+    const services = {
+        "Kesim & Tasarım": "60–90 dakika",
+        "Balyaj & Renk": "3–4 saat",
+        "Keratin & Bakım": "İşleme göre değişir",
+        "Gelin Saçı & Topuz": "4–6 saat",
+        "Kaş & Kirpik": "45 dakika"
+    };
+
+
+    /* =========================
+       CHAT AÇ / KAPAT
+    ========================= */
+
+    button.addEventListener("click", function () {
+
+        windowBox.classList.add("active");
+
+        if (!messages.children.length) {
+            botMessage(
+                "Merhaba 👋 Ben GLOW AI.\n\n" +
+                "Hizmetlerimiz, fiyatlandırma, çalışma saatleri veya randevu hakkında yardımcı olabilirim.\n\n" +
+                "İsterseniz randevu talebinizi de birlikte oluşturabiliriz."
+            );
+        }
+
+        setTimeout(() => input.focus(), 100);
+
+    });
+
+
+    closeButton.addEventListener("click", function () {
+        windowBox.classList.remove("active");
+    });
+
+
+    /* =========================
+       MESAJ EKLEME
+    ========================= */
+
+    function botMessage(text) {
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "glow-ai-message bot";
+
+        const bubble = document.createElement("div");
+        bubble.className = "glow-ai-bubble";
+
+        bubble.textContent = text;
+
+        wrapper.appendChild(bubble);
+        messages.appendChild(wrapper);
+
+        scrollBottom();
+    }
+
+
+    function userMessage(text) {
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "glow-ai-message user";
+
+        const bubble = document.createElement("div");
+        bubble.className = "glow-ai-bubble";
+
+        bubble.textContent = text;
+
+        wrapper.appendChild(bubble);
+        messages.appendChild(wrapper);
+
+        scrollBottom();
+    }
+
+
+    function scrollBottom() {
+        messages.scrollTop = messages.scrollHeight;
+    }
+
+
+    /* =========================
+       SEÇENEK BUTONLARI
+    ========================= */
+
+    function showOptions(options) {
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "glow-ai-option-container";
+
+        options.forEach(function (option) {
+
+            const btn = document.createElement("button");
+
+            btn.className = "glow-ai-option";
+            btn.textContent = option;
+
+            btn.addEventListener("click", function () {
+
+                userMessage(option);
+
+                handleBookingInput(option);
+
+            });
+
+            wrapper.appendChild(btn);
+
+        });
+
+        messages.appendChild(wrapper);
+
+        scrollBottom();
+    }
+
+
+    /* =========================
+       HİZMETLER
+    ========================= */
+
+    function showServices() {
+
+        let text = "GLOW STUDIO hizmetleri:\n\n";
+
+        Object.keys(services).forEach(function (service) {
+
+            text += "• " + service +
+                    " — " +
+                    services[service] +
+                    "\n";
+
+        });
+
+        text +=
+            "\nNet fiyat; saç uzunluğu, yoğunluğu ve mevcut saç geçmişine göre değişebilir. " +
+            "İsterseniz saç fotoğrafınızı WhatsApp üzerinden göndererek fiyat bilgisi alabilirsiniz.";
+
+        botMessage(text);
+
+    }
+
+
+    /* =========================
+       FİYAT
+    ========================= */
+
+    function showPrice() {
+
+        botMessage(
+            "Fiyatlarımız saçın uzunluğu, yoğunluğu ve mevcut saç geçmişine göre değişebiliyor. ✨\n\n" +
+            "Özellikle balyaj ve renk işlemlerinde net fiyat verebilmek için saç fotoğrafı görmek gerekiyor.\n\n" +
+            "İsterseniz WhatsApp üzerinden saç fotoğrafınızı gönderebilirsiniz."
+        );
+
+    }
+
+
+    /* =========================
+       ÇALIŞMA SAATLERİ
+    ========================= */
+
+    function showHours() {
+
+        botMessage(
+            "Çalışma saatlerimiz:\n\n" +
+            "Pazartesi – Cumartesi: 09:00 – 20:00\n" +
+            "Pazar: 11:00 – 19:00\n\n" +
+            "Pazar günü randevu ile hizmet veriyoruz."
+        );
+
+    }
+
+
+    /* =========================
+       KONUM
+    ========================= */
+
+    function showLocation() {
+
+        botMessage(
+            "📍 GLOW STUDIO\n" +
+            "Bayraklı / İzmir\n\n" +
+            "Konum için aşağıdaki bağlantıyı kullanabilirsiniz:\n" +
+            "https://maps.app.goo.gl/TfvUZXLeFGgQmGH47"
+        );
+
+    }
+
+
+    /* =========================
+       RANDEVU BAŞLAT
+    ========================= */
+
+    function startAppointment() {
+
+        booking = {
+            service: "",
+            date: "",
+            time: "",
+            name: "",
+            phone: ""
+        };
+
+        bookingStep = "service";
+
+        botMessage(
+            "Tabii 🌸 Randevu talebinizi birlikte oluşturalım.\n\n" +
+            "Öncelikle hangi hizmet için randevu almak istiyorsunuz?"
+        );
+
+        showOptions(Object.keys(services));
+
+    }
+
+
+    /* =========================
+       TARİH SEÇİMİ
+    ========================= */
+
+    function askDate() {
+
+        bookingStep = "date";
+
+        botMessage(
+            "Harika. 📅 Randevu istediğiniz tarihi seçin:"
+        );
+
+        const wrapper = document.createElement("div");
+        wrapper.className = "glow-ai-date";
+
+        const dateInput = document.createElement("input");
+
+        dateInput.type = "date";
+
+        const today = new Date();
+
+        const year = today.getFullYear();
+        const month = String(today.getMonth() + 1).padStart(2, "0");
+        const day = String(today.getDate()).padStart(2, "0");
+
+        dateInput.min = `${year}-${month}-${day}`;
+
+        const continueButton = document.createElement("button");
+
+        continueButton.textContent = "Devam";
+
+        continueButton.addEventListener("click", function () {
+
+            if (!dateInput.value) {
+                return;
+            }
+
+            const selectedDate = dateInput.value;
+
+            booking.date = selectedDate;
+
+            const formattedDate =
+                new Date(selectedDate + "T12:00:00")
+                    .toLocaleDateString("tr-TR");
+
+            userMessage(formattedDate);
+
+            wrapper.remove();
+
+            askTime();
+
+        });
+
+        wrapper.appendChild(dateInput);
+        wrapper.appendChild(continueButton);
+
+        messages.appendChild(wrapper);
+
+        scrollBottom();
+
+    }
+
+
+    /* =========================
+       SAAT SEÇİMİ
+    ========================= */
+
+    function askTime() {
+
+        bookingStep = "time";
+
+        botMessage(
+            "Şimdi istediğiniz saati seçin. ⏰\n\n" +
+            "Demo takviminde dolu olan saatleri otomatik kontrol ediyorum."
+        );
+
+        showOptions([
+            "09:00",
+            "10:00",
+            "12:00",
+            "14:00",
+            "15:00",
+            "16:00",
+            "17:00",
+            "18:00"
+        ]);
+
+    }
+
+
+    /* =========================
+       DEMO MÜSAİTLİK
+       
+       ÖNEMLİ:
+       Bunlar şu an gerçek işletme
+       takvimi değildir.
+    ========================= */
+
+    function isDemoBusy(time) {
+
+        const busyTimes = [
+            "14:00",
+            "15:00",
+            "17:00"
+        ];
+
+        return busyTimes.includes(time);
+
+    }
+
+
+    function showAlternativeTimes() {
+
+        const available = [
+            "09:00",
+            "10:00",
+            "12:00",
+            "16:00",
+            "18:00"
+        ];
+
+        botMessage(
+            "Bu saat demo takviminde dolu görünüyor. 🙌\n\n" +
+            "Uygun görünen alternatif saatler:"
+        );
+
+        showOptions(available);
+
+    }
+
+
+    /* =========================
+       WHATSAPP RANDEVU
+    ========================= */
+
+    function sendAppointmentToWhatsApp() {
+
+        const message =
+            "🌸 GLOW STUDIO RANDEVU TALEBİ\n\n" +
+
+            "👤 Müşteri: " +
+            booking.name +
+            "\n" +
+
+            "📱 Telefon: " +
+            booking.phone +
+            "\n" +
+
+            "💇 Hizmet: " +
+            booking.service +
+            "\n" +
+
+            "📅 Tarih: " +
+            booking.date +
+            "\n" +
+
+            "⏰ Saat: " +
+            booking.time +
+            "\n\n" +
+
+            "Bu mesaj web sitesindeki GLOW AI üzerinden oluşturulmuştur.";
+
+        const whatsappUrl =
+            "https://wa.me/905374864299?text=" +
+            encodeURIComponent(message);
+
+        window.open(whatsappUrl, "_blank");
+
+    }
+
+
+    /* =========================
+       BOOKING INPUT
+    ========================= */
+
+    function handleBookingInput(text) {
+
+        if (bookingStep === "service") {
+
+            if (services[text]) {
+
+                booking.service = text;
+
+                botMessage(
+                    text +
+                    " seçildi. ✨\n\n" +
+                    "Şimdi randevu istediğiniz tarihi seçelim."
+                );
+
+                askDate();
+
+            }
+
+            return;
+        }
+
+
+        if (bookingStep === "time") {
+
+            if (!/^\d{2}:\d{2}$/.test(text)) {
+                return;
+            }
+
+            if (isDemoBusy(text)) {
+
+                showAlternativeTimes();
+
+                return;
+
+            }
+
+            booking.time = text;
+
+            bookingStep = "name";
+
+            botMessage(
+                "Bu saat için demo takviminde uygunluk görünüyor. ✅\n\n" +
+                "Adınızı ve soyadınızı yazabilir misiniz?"
+            );
+
+            return;
+        }
+
+
+        if (bookingStep === "name") {
+
+            if (text.length < 2) {
+
+                botMessage(
+                    "Adınızı ve soyadınızı biraz daha açık yazabilir misiniz?"
+                );
+
+                return;
+
+            }
+
+            booking.name = text;
+
+            bookingStep = "phone";
+
+            botMessage(
+                "Teşekkürler, " +
+                booking.name +
+                ". 🌸\n\n" +
+                "Size ulaşabileceğimiz telefon numaranızı yazabilir misiniz?"
+            );
+
+            return;
+        }
+
+
+        if (bookingStep === "phone") {
+
+            const cleanPhone = text.replace(/\D/g, "");
+
+            if (cleanPhone.length < 10) {
+
+                botMessage(
+                    "Telefon numarasını başında 0 olacak şekilde yazabilirsiniz.\n\n" +
+                    "Örnek: 0532 123 45 67"
+                );
+
+                return;
+            }
+
+            booking.phone = cleanPhone;
+
+            bookingStep = "confirm";
+
+            botMessage(
+                "Randevu talebinizi hazırladım. 🌸\n\n" +
+
+                "Hizmet: " +
+                booking.service +
+                "\n" +
+
+                "Tarih: " +
+                booking.date +
+                "\n" +
+
+                "Saat: " +
+                booking.time +
+                "\n" +
+
+                "İsim: " +
+                booking.name +
+                "\n" +
+
+                "Telefon: " +
+                booking.phone +
+                "\n\n" +
+
+                "Talebi GLOW STUDIO WhatsApp hesabına göndermek ister misiniz?"
+            );
+
+            showOptions([
+                "WhatsApp'a Gönder",
+                "İptal"
+            ]);
+
+            return;
+        }
+
+
+        if (bookingStep === "confirm") {
+
+            if (text === "WhatsApp'a Gönder") {
+
+                sendAppointmentToWhatsApp();
+
+                botMessage(
+                    "Randevu talebiniz WhatsApp'a gönderilmek üzere hazırlandı. ✅\n\n" +
+                    "İşletmenin onayından sonra randevunuz kesinleşir."
+                );
+
+                bookingStep = null;
+
+                return;
+            }
+
+            if (text === "İptal") {
+
+                bookingStep = null;
+
+                botMessage(
+                    "Tamamdır. Randevu talebini iptal ettim. 😊\n\n" +
+                    "Başka bir konuda yardımcı olabilirim."
+                );
+
+            }
+
+        }
+
+    }
+
+
+    /* =========================
+       NORMAL CHAT
+    ========================= */
+
+    function handleMessage(text) {
+
+        const lower = text.toLowerCase().trim();
+
+
+        /* RANDEVU */
+
+        if (
+            lower.includes("randevu") ||
+            lower.includes("rezervasyon") ||
+            lower.includes("yer ayırt")
+        ) {
+
+            startAppointment();
+
+            return;
+        }
+
+
+        /* HİZMET */
+
+        if (
+            lower.includes("hizmet") ||
+            lower.includes("neler yapıyorsunuz") ||
+            lower.includes("hangi işlemler")
+        ) {
+
+            showServices();
+
+            return;
+        }
+
+
+        /* BALYAJ */
+
+        if (
+            lower.includes("balyaj") ||
+            lower.includes("balayage")
+        ) {
+
+            botMessage(
+                "Balyaj & Renk işlemlerimiz saçın uzunluğu ve yoğunluğuna göre yaklaşık 3–4 saat sürebiliyor. ✨\n\n" +
+                "Net fiyat için saç fotoğrafınızı WhatsApp üzerinden göndermenizi öneriyoruz."
+            );
+
+            return;
+        }
+
+
+        /* KESİM */
+
+        if (
+            lower.includes("kesim") ||
+            lower.includes("saç kes")
+        ) {
+
+            botMessage(
+                "Kesim & Tasarım işlemi yaklaşık 60–90 dakika sürüyor. ✂️\n\n" +
+                "İsterseniz randevu talebinizi şimdi oluşturabiliriz."
+            );
+
+            return;
+        }
+
+
+        /* KERATİN */
+
+        if (
+            lower.includes("keratin") ||
+            lower.includes("bakım")
+        ) {
+
+            botMessage(
+                "Keratin & Bakım işlemlerimiz saçınızın mevcut durumuna göre planlanıyor. ✨\n\n" +
+                "İsterseniz saç fotoğrafınızı WhatsApp üzerinden göndererek detaylı bilgi alabilirsiniz."
+            );
+
+            return;
+        }
+
+
+        /* GELİN */
+
+        if (
+            lower.includes("gelin") ||
+            lower.includes("topuz")
+        ) {
+
+            botMessage(
+                "Gelin Saçı & Topuz işlemleri yaklaşık 4–6 saat sürebiliyor. 👰‍♀️\n\n" +
+                "Özellikle gelin randevularında önceden rezervasyon yapılmasını öneriyoruz."
+            );
+
+            return;
+        }
+
+
+        /* FİYAT */
+
+        if (
+            lower.includes("fiyat") ||
+            lower.includes("ücret") ||
+            lower.includes("kaç tl") ||
+            lower.includes("ne kadar")
+        ) {
+
+            showPrice();
+
+            return;
+        }
+
+
+        /* SAAT */
+
+        if (
+            lower.includes("saat") ||
+            lower.includes("kaça kadar") ||
+            lower.includes("açık")
+        ) {
+
+            showHours();
+
+            return;
+        }
+
+
+        /* KONUM */
+
+        if (
+            lower.includes("konum") ||
+            lower.includes("adres") ||
+            lower.includes("nerede") ||
+            lower.includes("bayraklı")
+        ) {
+
+            showLocation();
+
+            return;
+        }
+
+
+        /* İPTAL */
+
+        if (
+            lower.includes("iptal") ||
+            lower.includes("değiştir")
+        ) {
+
+            botMessage(
+                "Randevu iptal veya değişiklik taleplerinin mümkünse en az 24 saat önceden bildirilmesini rica ediyoruz."
+            );
+
+            return;
+        }
+
+
+        /* ÜRÜN */
+
+        if (
+            lower.includes("ürün") ||
+            lower.includes("loreal") ||
+            lower.includes("kerastase") ||
+            lower.includes("olaplex")
+        ) {
+
+            botMessage(
+                "Salonumuzda L'Oréal Professionnel, Kérastase ve Olaplex gibi profesyonel ürünler kullanılıyor. ✨"
+            );
+
+            return;
+        }
+
+
+        /* KADIN */
+
+        if (
+            lower.includes("erkek") ||
+            lower.includes("sadece kadın")
+        ) {
+
+            botMessage(
+                "GLOW STUDIO kadınlara özel hizmet vermektedir. 🌸"
+            );
+
+            return;
+        }
+
+
+        /* ANLAŞILMAYAN */
+
+        botMessage(
+            "Bunu tam anlayamadım ama yardımcı olabilirim. 😊\n\n" +
+            "Örneğin:\n" +
+            "• Balyaj ne kadar sürüyor?\n" +
+            "• Fiyatlar nasıl?\n" +
+            "• Randevu almak istiyorum\n" +
+            "• Çalışma saatleriniz nedir?\n" +
+            "• Neredesiniz?"
+        );
+
+    }
+
+
+    /* =========================
+       MESAJ GÖNDER
+    ========================= */
+
+    function sendMessage() {
+
+        const text = input.value.trim();
+
+        if (!text) {
+            return;
+        }
+
+        input.value = "";
+
+        userMessage(text);
+
+        /*
+           Eğer randevu akışındaysak
+           booking motoruna gönder.
+        */
+
+        if (bookingStep) {
+
+            handleBookingInput(text);
+
+            return;
+
+        }
+
+        handleMessage(text);
+
+    }
+
+
+    sendButton.addEventListener("click", sendMessage);
+
+
+    input.addEventListener("keydown", function (event) {
+
+        if (event.key === "Enter") {
+            sendMessage();
+        }
+
+    });
+
+
+    /* =========================
+       HIZLI BUTONLAR
+    ========================= */
+
+    document
+        .querySelectorAll(".glow-ai-quick-btn")
+        .forEach(function (btn) {
+
+            btn.addEventListener("click", function () {
+
+                const action = btn.dataset.action;
+
+                if (action === "services") {
+                    userMessage("Hizmetler");
+                    showServices();
+                }
+
+                if (action === "price") {
+                    userMessage("Fiyat");
+                    showPrice();
+                }
+
+                if (action === "appointment") {
+                    userMessage("Randevu");
+                    startAppointment();
+                }
+
+                if (action === "hours") {
+                    userMessage("Çalışma saatleri");
+                    showHours();
+                }
+
+                if (action === "location") {
+                    userMessage("Konum");
+                    showLocation();
+                }
+
+            });
+
+        });
+
+})();
+</script>
 </body>
 </html>
