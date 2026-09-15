@@ -10,6 +10,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://unpkg.com/lucide@latest"></script>
+
     <script>
         tailwind.config = {
             theme: {
@@ -33,6 +34,7 @@
             }
         }
     </script>
+
     <style>
         *{font-family:'Plus Jakarta Sans',sans-serif}
         .font-serif{font-family:'Cormorant Garamond',serif}
@@ -50,282 +52,659 @@
         .noise:before{content:'';position:absolute;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");pointer-events:none}
     </style>
 </head>
+
 <body class="bg-paper text-ink antialiased overflow-x-hidden pb-[84px] md:pb-0">
 
     <!-- Top Status Bar -->
     <div class="w-full bg-ink text-[#F4E8EB] text-[11px] tracking-[0.14em] uppercase font-medium py-2.5 flex justify-center items-center gap-3 z-[60] relative">
         <div class="w-40 h-px bg-white/10 hidden md:block"></div>
+
         <span class="flex items-center gap-2.5">
             <span class="relative flex h-2 w-2">
                 <span id="statusPing" class="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75"></span>
                 <span id="statusDot" class="relative inline-flex rounded-full h-2 w-2 bg-emerald-400"></span>
             </span>
-            <span id="statusText">Şu An Açığız / Canlı Randevu Alabilirsiniz</span>
+
+            <span id="statusText">
+                Şu An Açığız / Canlı Randevu Alabilirsiniz
+            </span>
         </span>
+
         <div class="w-40 h-px bg-white/10 hidden md:block"></div>
-        <span class="hidden md:flex items-center gap-2 ml-6 text-white/60 normal-case tracking-normal text-[12px]"><i data-lucide="clock-3" class="w-3.5 h-3.5"></i> Her gün 09:00 - 20:00</span>
+
+        <span class="hidden md:flex items-center gap-2 ml-6 text-white/60 normal-case tracking-normal text-[12px]">
+            <i data-lucide="clock-3" class="w-3.5 h-3.5"></i>
+            Her gün 09:00 - 20:00
+        </span>
     </div>
+
 
     <!-- Navbar -->
     <header class="sticky top-0 z-50 bg-paper/80 backdrop-blur-xl border-b border-ink/[0.06]">
+
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8 h-[72px] flex items-center justify-between">
+
             <a href="#" class="flex items-center gap-3 group">
-                <div class="w-9 h-9 rounded-full bg-ink text-pudra flex items-center justify-center font-serif text-[18px] font-bold tracking-widest group-hover:rotate-[-8deg] transition-transform">G</div>
-                <div class="leading-none">
-                    <div class="font-serif text-[20px] font-bold tracking-[0.18em]">GLOW STUDIO</div>
-                    <div class="text-[9px] tracking-[0.32em] uppercase text-ink/60 font-semibold -mt-0.5">BAYAN KUAFÖRÜ • İZMİR</div>
+
+                <div class="w-9 h-9 rounded-full bg-ink text-pudra flex items-center justify-center font-serif text-[18px] font-bold tracking-widest group-hover:rotate-[-8deg] transition-transform">
+                    G
                 </div>
+
+                <div class="leading-none">
+                    <div class="font-serif text-[20px] font-bold tracking-[0.18em]">
+                        GLOW STUDIO
+                    </div>
+
+                    <div class="text-[9px] tracking-[0.32em] uppercase text-ink/60 font-semibold -mt-0.5">
+                        BAYAN KUAFÖRÜ • İZMİR
+                    </div>
+                </div>
+
             </a>
 
+
             <nav class="hidden lg:flex items-center gap-9 text-[13px] tracking-wide font-medium">
-                <a href="#hakkimizda" class="hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">Hakkımızda</a>
-                <a href="#hizmetlerimiz" class="hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">Hizmetlerimiz</a>
-                <a href="#yorumlar" class="hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">Yorumlar</a>
-                <a href="#sss" class="hover:text-gold transition-colors">SSS</a>
+
+                <a href="#hakkimizda"
+                   class="hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">
+                    Hakkımızda
+                </a>
+
+                <a href="#hizmetlerimiz"
+                   class="hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">
+                    Hizmetlerimiz
+                </a>
+
+                <a href="#yorumlar"
+                   class="hover:text-gold transition-colors relative after:absolute after:-bottom-1 after:left-0 after:w-0 after:h-px after:bg-gold hover:after:w-full after:transition-all">
+                    Yorumlar
+                </a>
+
+                <a href="#sss" class="hover:text-gold transition-colors">
+                    SSS
+                </a>
+
             </nav>
 
+
             <div class="flex items-center gap-3">
-                <a href="tel:+905374864299" class="hidden md:flex items-center gap-2 text-[12px] font-semibold tracking-wide border border-ink/10 rounded-full px-4 h-9 hover:border-gold/40 transition-colors">
-                    <i data-lucide="phone" class="w-3.5 h-3.5"></i> 537 486 42 99
+
+                <a href="tel:+905374864299"
+                   class="hidden md:flex items-center gap-2 text-[12px] font-semibold tracking-wide border border-ink/10 rounded-full px-4 h-9 hover:border-gold/40 transition-colors">
+
+                    <i data-lucide="phone" class="w-3.5 h-3.5"></i>
+
+                    537 486 42 99
+
                 </a>
-                <a href="#randevu" class="h-9 md:h-10 px-5 md:px-6 rounded-full bg-ink text-white text-[12px] md:text-[13px] font-semibold tracking-wide flex items-center gap-2 hover:bg-black transition-colors shimmer">
-                    Randevu Al <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+
+
+                <a href="#randevu"
+                   class="h-9 md:h-10 px-5 md:px-6 rounded-full bg-ink text-white text-[12px] md:text-[13px] font-semibold tracking-wide flex items-center gap-2 hover:bg-black transition-colors shimmer">
+
+                    Randevu Al
+
+                    <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+
                 </a>
-                <button id="mobileMenuBtn" class="lg:hidden w-10 h-10 rounded-full border border-ink/10 flex items-center justify-center">
+
+
+                <button id="mobileMenuBtn"
+                        class="lg:hidden w-10 h-10 rounded-full border border-ink/10 flex items-center justify-center">
+
                     <i data-lucide="menu" class="w-5 h-5"></i>
+
                 </button>
+
             </div>
+
         </div>
+
 
         <!-- Mobile Drawer -->
-        <div id="mobileDrawer" class="lg:hidden fixed inset-0 z-[70] pointer-events-none">
-            <div id="drawerOverlay" class="absolute inset-0 bg-ink/40 backdrop-blur-sm opacity-0 transition-opacity"></div>
-            <div id="drawerPanel" class="absolute right-0 top-0 h-full w-[84%] max-w-[360px] bg-paper p-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(.4,0,.2,1)] flex flex-col">
-                <button id="closeDrawer" class="self-end w-10 h-10 rounded-full bg-ink text-white flex items-center justify-center mb-10">
+        <div id="mobileDrawer"
+             class="lg:hidden fixed inset-0 z-[70] pointer-events-none">
+
+            <div id="drawerOverlay"
+                 class="absolute inset-0 bg-ink/40 backdrop-blur-sm opacity-0 transition-opacity"></div>
+
+            <div id="drawerPanel"
+                 class="absolute right-0 top-0 h-full w-[84%] max-w-[360px] bg-paper p-8 translate-x-full transition-transform duration-500 ease-[cubic-bezier(.4,0,.2,1)] flex flex-col">
+
+                <button id="closeDrawer"
+                        class="self-end w-10 h-10 rounded-full bg-ink text-white flex items-center justify-center mb-10">
+
                     <i data-lucide="x" class="w-5 h-5"></i>
+
                 </button>
 
+
                 <nav class="flex flex-col gap-7 font-serif text-[28px] leading-none">
-                    <a href="#hakkimizda" class="drawer-link">Hakkımızda</a>
-                    <a href="#hizmetlerimiz" class="drawer-link">Hizmetler</a>
-                    <a href="#yorumlar" class="drawer-link">Yorumlar</a>
-                    <a href="#sss" class="drawer-link">SSS</a>
-                    <a href="#iletisim" class="drawer-link">İletişim</a>
+
+                    <a href="#hakkimizda" class="drawer-link">
+                        Hakkımızda
+                    </a>
+
+                    <a href="#hizmetlerimiz" class="drawer-link">
+                        Hizmetler
+                    </a>
+
+                    <a href="#yorumlar" class="drawer-link">
+                        Yorumlar
+                    </a>
+
+                    <a href="#sss" class="drawer-link">
+                        SSS
+                    </a>
+
+                    <a href="#iletisim" class="drawer-link">
+                        İletişim
+                    </a>
+
                 </nav>
 
+
                 <div class="mt-auto pt-10 border-t border-ink/10">
-                    <div class="text-[11px] tracking-widest uppercase opacity-60 mb-3">Canlı Destek</div>
-                    <div class="font-serif text-[22px] font-semibold">537 486 42 99</div>
-                    <div class="text-[13px] opacity-60 mt-1">Bayraklı / İzmir</div>
-                    <a href="#randevu" class="mt-6 h-12 rounded-full bg-ink text-white w-full flex items-center justify-center gap-2 text-sm font-semibold drawer-link">
-                        WhatsApp Randevu <i data-lucide="arrow-right" class="w-4 h-4"></i>
+
+                    <div class="text-[11px] tracking-widest uppercase opacity-60 mb-3">
+                        Canlı Destek
+                    </div>
+
+                    <div class="font-serif text-[22px] font-semibold">
+                        537 486 42 99
+                    </div>
+
+                    <div class="text-[13px] opacity-60 mt-1">
+                        Bayraklı / İzmir
+                    </div>
+
+                    <a href="#randevu"
+                       class="mt-6 h-12 rounded-full bg-ink text-white w-full flex items-center justify-center gap-2 text-sm font-semibold drawer-link">
+
+                        WhatsApp Randevu
+
+                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+
                     </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </header>
+
 
     <!-- Hero -->
     <section class="relative max-w-[1280px] mx-auto px-6 lg:px-8 pt-8 md:pt-14 pb-16 md:pb-24">
+
         <div class="grid lg:grid-cols-[1.05fr_0.95fr] gap-10 lg:gap-16 items-center">
 
             <!-- Left -->
             <div class="relative">
+
                 <div class="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-pudra border border-champagne/60 text-[11px] tracking-[0.12em] uppercase font-semibold mb-6">
-                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span> İzmir’in En Çok Tercih Edilen Premium Stüdyosu
+
+                    <span class="w-1.5 h-1.5 rounded-full bg-gold animate-pulse"></span>
+
+                    İzmir’in En Çok Tercih Edilen Premium Stüdyosu
+
                 </div>
+
 
                 <h1 class="font-serif text-[42px] md:text-[64px] leading-[0.9] tracking-[-0.02em] font-[500]">
+
                     Zarafetin<br>
-                    <span class="italic font-[400] text-gold-gradient">ışıltıya</span> dönüştüğü<br>
+
+                    <span class="italic font-[400] text-gold-gradient">
+                        ışıltıya
+                    </span>
+
+                    dönüştüğü<br>
+
                     tek adres.
+
                 </h1>
 
+
                 <p class="mt-6 text-[15px] md:text-[16px] leading-[1.7] text-ink/70 max-w-[48ch]">
-                    GLOW STUDIO’da her detay sizin için tasarlanır. Kişiye özel saç renklendirme, kesim ve bakım ritüelleri ile doğal güzelliğinizi lüks bir dokunuşla ortaya çıkarıyoruz.
+
+                    GLOW STUDIO’da her detay sizin için tasarlanır.
+                    Kişiye özel saç renklendirme, kesim ve bakım ritüelleri ile
+                    doğal güzelliğinizi lüks bir dokunuşla ortaya çıkarıyoruz.
+
                 </p>
 
+
                 <div class="mt-8 flex flex-wrap gap-3">
-                    <a href="#randevu" class="h-[48px] px-7 rounded-full bg-ink text-white text-[13px] font-semibold tracking-wide inline-flex items-center gap-2.5 hover:bg-black transition-colors">
-                        <i data-lucide="sparkles" class="w-4 h-4 text-roseGold"></i> Hemen Randevu Al
+
+                    <a href="#randevu"
+                       class="h-[48px] px-7 rounded-full bg-ink text-white text-[13px] font-semibold tracking-wide inline-flex items-center gap-2.5 hover:bg-black transition-colors">
+
+                        <i data-lucide="sparkles" class="w-4 h-4 text-roseGold"></i>
+
+                        Hemen Randevu Al
+
                     </a>
-                    <a href="#hizmetlerimiz" class="h-[48px] px-7 rounded-full border border-ink/15 text-[13px] font-semibold tracking-wide inline-flex items-center gap-2 hover:border-ink transition-colors bg-white">
+
+
+                    <a href="#hizmetlerimiz"
+                       class="h-[48px] px-7 rounded-full border border-ink/15 text-[13px] font-semibold tracking-wide inline-flex items-center gap-2 hover:border-ink transition-colors bg-white">
+
                         Hizmetleri İncele
+
                     </a>
+
                 </div>
+
 
                 <div class="mt-10 flex items-center gap-6">
+
                     <div class="flex -space-x-3">
-                        <div class="w-9 h-9 rounded-full border-2 border-paper bg-pudra flex items-center justify-center text-[10px] font-bold">AY</div>
-                        <div class="w-9 h-9 rounded-full border-2 border-paper bg-champagne flex items-center justify-center text-[10px] font-bold">EK</div>
-                        <div class="w-9 h-9 rounded-full border-2 border-paper bg-ink text-white flex items-center justify-center text-[10px] font-bold">+2k</div>
+
+                        <div class="w-9 h-9 rounded-full border-2 border-paper bg-pudra flex items-center justify-center text-[10px] font-bold">
+                            AY
+                        </div>
+
+                        <div class="w-9 h-9 rounded-full border-2 border-paper bg-champagne flex items-center justify-center text-[10px] font-bold">
+                            EK
+                        </div>
+
+                        <div class="w-9 h-9 rounded-full border-2 border-paper bg-ink text-white flex items-center justify-center text-[10px] font-bold">
+                            +2k
+                        </div>
+
                     </div>
 
+
                     <div class="text-[12px] leading-[1.4]">
+
                         <div class="flex items-center gap-1 font-semibold">
-                            <i data-lucide="star" class="w-3.5 h-3.5 fill-gold text-gold"></i>
+
+                            <i data-lucide="star"
+                               class="w-3.5 h-3.5 fill-gold text-gold"></i>
+
                             4.9/5 Google Puanı
-                            <span class="opacity-50 font-normal">• 847 yorum</span>
+
+                            <span class="opacity-50 font-normal">
+                                • 847 yorum
+                            </span>
+
                         </div>
-                        <div class="opacity-60">Son 30 günde 1.200+ memnun misafir</div>
+
+                        <div class="opacity-60">
+                            Son 30 günde 1.200+ memnun misafir
+                        </div>
+
                     </div>
+
                 </div>
+
 
                 <div class="hidden md:flex absolute -right-10 top-[58%] -rotate-90 origin-center text-[10px] tracking-[0.35em] uppercase opacity-20">
                     EST. 2016 — BAYRAKLI İZMİR
                 </div>
+
             </div>
+
 
             <!-- Right Image -->
             <div class="relative lg:h-[620px]">
+
                 <div class="absolute -top-6 -left-6 w-[140px] h-[140px] rounded-full bg-pudra blur-[1px] -z-10 hidden md:block"></div>
+
                 <div class="absolute -bottom-10 -right-6 w-[220px] h-[220px] rounded-full bg-champagne/40 blur-[1px] -z-10 hidden md:block"></div>
 
+
                 <div class="relative h-[460px] md:h-[580px] lg:h-full hero-img-mask overflow-hidden bg-[#E8D5C4] shadow-[0_24px_80px_rgba(43,35,42,0.18)]">
+
                     <img src="https://www.designarena.ai/u/a03df4ac-1a72-4c7c-972f-d456d0478fbf"
                          alt="GLOW STUDIO İzmir Mağaza Önü - Premium Bayan Kuaförü"
                          class="w-full h-full object-cover object-center scale-[1.02] hover:scale-100 transition-transform duration-[2.5s]">
 
                     <div class="absolute inset-0 bg-gradient-to-t from-ink/30 via-transparent to-transparent"></div>
 
+
                     <!-- Floating Badge Top -->
                     <div class="absolute top-4 left-4 md:top-6 md:left-6 bg-white/90 backdrop-blur-md rounded-full px-4 py-2 flex items-center gap-2.5 text-[11px] font-semibold tracking-wide shadow-lg">
+
                         <span class="w-6 h-6 rounded-full gold-gradient flex items-center justify-center text-white">
+
                             <i data-lucide="map-pin" class="w-3.5 h-3.5"></i>
+
                         </span>
+
                         Bayraklı, İzmir
+
                     </div>
+
 
                     <!-- Floating Card Bottom -->
                     <div class="absolute bottom-4 left-4 right-4 md:bottom-6 md:left-6 md:right-auto md:w-[300px] bg-white rounded-[20px] p-4 shadow-[0_12px_40px_rgba(0,0,0,0.15)] flex gap-4">
+
                         <div class="w-12 h-12 rounded-full bg-pudra flex items-center justify-center shrink-0">
+
                             <i data-lucide="scissors" class="w-5 h-5 text-ink"></i>
+
                         </div>
+
                         <div>
-                            <div class="font-serif font-semibold leading-none text-[16px]">Bugün 12 Randevu</div>
-                            <div class="text-[11px] opacity-60 mt-1 leading-[1.4]">Son 2 slot kaldı — 16:30 ve 18:00 uygun</div>
-                            <div class="mt-2.5 h-1.5 w-full bg-ink/10 rounded-full overflow-hidden">
-                                <div class="h-full w-[82%] gold-gradient rounded-full"></div>
+
+                            <div class="font-serif font-semibold leading-none text-[16px]">
+                                Bugün 12 Randevu
                             </div>
+
+                            <div class="text-[11px] opacity-60 mt-1 leading-[1.4]">
+                                Son 2 slot kaldı — 16:30 ve 18:00 uygun
+                            </div>
+
+                            <div class="mt-2.5 h-1.5 w-full bg-ink/10 rounded-full overflow-hidden">
+
+                                <div class="h-full w-[82%] gold-gradient rounded-full"></div>
+
+                            </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- Side mini card -->
                 <div class="absolute -right-4 md:-right-8 top-[48%] hidden md:flex bg-ink text-white rounded-[18px] px-5 py-4 items-center gap-3 shadow-xl">
+
                     <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center">
+
                         <i data-lucide="gem" class="w-5 h-5 text-roseGold"></i>
+
                     </div>
+
                     <div class="leading-tight">
-                        <div class="text-[11px] tracking-widest uppercase opacity-60">Hijyen & Konfor</div>
-                        <div class="font-serif text-[15px]">%100 Kişiye Özel Set</div>
+
+                        <div class="text-[11px] tracking-widest uppercase opacity-60">
+                            Hijyen & Konfor
+                        </div>
+
+                        <div class="font-serif text-[15px]">
+                            %100 Kişiye Özel Set
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
+
 
     <!-- Appointment Form -->
     <section id="randevu" class="relative bg-white border-y border-ink/[0.06]">
+
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-12 md:py-20">
+
             <div class="grid lg:grid-cols-[0.9fr_1.1fr] gap-10 lg:gap-16 items-start">
 
                 <!-- Info -->
                 <div class="lg:sticky lg:top-[112px]">
+
                     <div class="inline-flex items-center gap-2 text-[11px] tracking-[0.2em] uppercase font-bold text-gold">
-                        <span class="w-8 h-px bg-gold"></span> Anında Onay
+
+                        <span class="w-8 h-px bg-gold"></span>
+
+                        Anında Onay
+
                     </div>
+
 
                     <h2 class="font-serif text-[36px] md:text-[46px] leading-[0.95] mt-4">
-                        WhatsApp ile<br><span class="italic font-normal">30 saniyede</span> randevu.
+
+                        WhatsApp ile<br>
+
+                        <span class="italic font-normal">
+                            30 saniyede
+                        </span>
+
+                        randevu.
+
                     </h2>
 
+
                     <p class="mt-4 text-[14px] leading-[1.7] text-ink/60 max-w-[40ch]">
-                        Formu doldurun, randevunuz doğrudan salon WhatsApp hattımıza iletilsin. Ekibimiz 5 dakika içinde dönüş yapar.
+
+                        Formu doldurun, randevunuz doğrudan salon WhatsApp hattımıza iletilsin.
+                        Ekibimiz 5 dakika içinde dönüş yapar.
+
                     </p>
 
+
                     <div class="mt-8 grid grid-cols-2 gap-4">
+
                         <div class="rounded-2xl bg-pudra/70 p-4 border border-champagne/50">
+
                             <div class="w-8 h-8 rounded-full bg-white flex items-center justify-center mb-3">
+
                                 <i data-lucide="shield-check" class="w-4 h-4"></i>
+
                             </div>
-                            <div class="text-[13px] font-semibold">Ücretsiz İptal</div>
-                            <div class="text-[11px] opacity-60 leading-[1.4] mt-1">24 saat öncesine kadar</div>
+
+                            <div class="text-[13px] font-semibold">
+                                Ücretsiz İptal
+                            </div>
+
+                            <div class="text-[11px] opacity-60 leading-[1.4] mt-1">
+                                24 saat öncesine kadar
+                            </div>
+
                         </div>
+
 
                         <div class="rounded-2xl bg-paper border border-ink/10 p-4">
+
                             <div class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center mb-3">
+
                                 <i data-lucide="zap" class="w-4 h-4"></i>
+
                             </div>
-                            <div class="text-[13px] font-semibold">Hızlı Dönüş</div>
-                            <div class="text-[11px] opacity-60 leading-[1.4] mt-1">Ort. 3 dk içinde yanıt</div>
+
+                            <div class="text-[13px] font-semibold">
+                                Hızlı Dönüş
+                            </div>
+
+                            <div class="text-[11px] opacity-60 leading-[1.4] mt-1">
+                                Ort. 3 dk içinde yanıt
+                            </div>
+
                         </div>
+
                     </div>
 
+
                     <div class="mt-8 flex items-center gap-3 text-[12px]">
+
                         <div class="w-10 h-10 rounded-full overflow-hidden bg-ink/10">
-                            <img src="https://i.pravatar.cc/100?img=32" class="w-full h-full object-cover" alt="">
+
+                            <img src="https://i.pravatar.cc/100?img=32"
+                                 class="w-full h-full object-cover"
+                                 alt="">
+
                         </div>
+
                         <div>
-                            <span class="font-semibold">Selin H.</span>
-                            <span class="opacity-60">• Randevu Asistanı</span><br>
-                            <span class="text-[11px] opacity-60">Şu an çevrimiçi — yazışıyor...</span>
+
+                            <span class="font-semibold">
+                                Selin H.
+                            </span>
+
+                            <span class="opacity-60">
+                                • Randevu Asistanı
+                            </span>
+
+                            <br>
+
+                            <span class="text-[11px] opacity-60">
+                                Şu an çevrimiçi — yazışıyor...
+                            </span>
+
                         </div>
+
                         <span class="ml-auto w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
+
                     </div>
+
                 </div>
+
 
                 <!-- Form Card -->
                 <div class="relative rounded-[28px] bg-paper border border-ink/[0.08] shadow-[0_20px_80px_rgba(43,35,42,0.08)] p-6 md:p-8">
+
                     <div class="absolute top-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold/40 to-transparent"></div>
 
+
                     <div class="flex items-center justify-between mb-6">
-                        <h3 class="font-serif text-[22px] font-semibold">Randevu Oluştur</h3>
-                        <span class="text-[10px] tracking-widest uppercase bg-ink text-white px-2.5 py-1 rounded-full">Canlı</span>
+
+                        <h3 class="font-serif text-[22px] font-semibold">
+                            Randevu Oluştur
+                        </h3>
+
+                        <span class="text-[10px] tracking-widest uppercase bg-ink text-white px-2.5 py-1 rounded-full">
+                            Canlı
+                        </span>
+
                     </div>
 
-                    <form id="appointmentForm" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <form id="appointmentForm"
+                          class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
 
                         <div class="md:col-span-2">
-                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">Ad Soyad</label>
-                            <input id="fName" required type="text" placeholder="Adınız ve soyadınız" class="mt-1.5 w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px] placeholder:text-ink/40 transition-all">
+
+                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">
+                                Ad Soyad
+                            </label>
+
+                            <input id="fName"
+                                   required
+                                   type="text"
+                                   placeholder="Adınız ve soyadınız"
+                                   class="mt-1.5 w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px] placeholder:text-ink/40 transition-all">
+
                         </div>
 
+
                         <div>
-                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">Telefon</label>
+
+                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">
+                                Telefon
+                            </label>
+
                             <div class="mt-1.5 relative">
-                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[13px] font-semibold opacity-60">+90</span>
-                                <input id="fPhone" required type="tel" inputmode="numeric" placeholder="537 486 42 99" class="w-full h-[46px] rounded-full border border-ink/10 bg-white pl-[52px] pr-5 text-[14px] placeholder:text-ink/40">
+
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-[13px] font-semibold opacity-60">
+                                    +90
+                                </span>
+
+                                <input id="fPhone"
+                                       required
+                                       type="tel"
+                                       inputmode="numeric"
+                                       placeholder="537 486 42 99"
+                                       class="w-full h-[46px] rounded-full border border-ink/10 bg-white pl-[52px] pr-5 text-[14px] placeholder:text-ink/40">
+
                             </div>
-                            <p class="text-[10px] opacity-50 mt-1.5 ml-4">Başında 0 olmadan yazınız</p>
+
+                            <p class="text-[10px] opacity-50 mt-1.5 ml-4">
+                                Başında 0 olmadan yazınız
+                            </p>
+
                         </div>
 
+
                         <div>
-                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">Hizmet Seçimi</label>
+
+                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">
+                                Hizmet Seçimi
+                            </label>
+
                             <div class="mt-1.5 relative">
-                                <select id="fService" required class="w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px] appearance-none">
-                                    <option value="" disabled selected>Hizmet seçin</option>
-                                    <option>Saç Kesim & Şekillendirme</option>
-                                    <option>Balyaj / Ombre / Renklendirme</option>
-                                    <option>Keratin & Bakım Ritüeli</option>
-                                    <option>Gelin Saçı & Topuz Tasarım</option>
-                                    <option>Kaş - Kirpik Lifting</option>
-                                    <option>Manikür & Pedikür</option>
+
+                                <select id="fService"
+                                        required
+                                        class="w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px] appearance-none">
+
+                                    <option value="" disabled selected>
+                                        Hizmet seçin
+                                    </option>
+
+                                    <option>
+                                        Saç Kesim & Şekillendirme
+                                    </option>
+
+                                    <option>
+                                        Balyaj / Ombre / Renklendirme
+                                    </option>
+
+                                    <option>
+                                        Keratin & Bakım Ritüeli
+                                    </option>
+
+                                    <option>
+                                        Gelin Saçı & Topuz Tasarım
+                                    </option>
+
+                                    <option>
+                                        Kaş - Kirpik Lifting
+                                    </option>
+
+                                    <option>
+                                        Manikür & Pedikür
+                                    </option>
+
                                 </select>
-                                <i data-lucide="chevron-down" class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50"></i>
+
+                                <i data-lucide="chevron-down"
+                                   class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50"></i>
+
                             </div>
+
                         </div>
 
-                        <div>
-                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">Tarih</label>
-                            <input id="fDate" required type="date" class="mt-1.5 w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px]">
-                        </div>
 
                         <div>
-                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">Saat</label>
+
+                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">
+                                Tarih
+                            </label>
+
+                            <input id="fDate"
+                                   required
+                                   type="date"
+                                   class="mt-1.5 w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px]">
+
+                        </div>
+
+
+                        <div>
+
+                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">
+                                Saat
+                            </label>
+
                             <div class="mt-1.5 relative">
-                                <select id="fTime" required class="w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px] appearance-none">
-                                    <option value="" disabled selected>Saat seçin</option>
+
+                                <select id="fTime"
+                                        required
+                                        class="w-full h-[46px] rounded-full border border-ink/10 bg-white px-5 text-[14px] appearance-none">
+
+                                    <option value="" disabled selected>
+                                        Saat seçin
+                                    </option>
+
                                     <option>09:00</option>
                                     <option>10:00</option>
                                     <option>11:00</option>
@@ -336,876 +715,1793 @@
                                     <option>16:30</option>
                                     <option>18:00</option>
                                     <option>19:00</option>
+
                                 </select>
-                                <i data-lucide="clock" class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50"></i>
+
+                                <i data-lucide="clock"
+                                   class="w-4 h-4 absolute right-4 top-1/2 -translate-y-1/2 pointer-events-none opacity-50"></i>
+
                             </div>
+
                         </div>
+
 
                         <div class="md:col-span-2">
-                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">Not (İsteğe Bağlı)</label>
-                            <textarea id="fNote" rows="2" placeholder="Örn: Koyu kumral üzerine ışıltı istiyorum..." class="mt-1.5 w-full rounded-[18px] border border-ink/10 bg-white p-4 text-[14px] placeholder:text-ink/40 resize-none"></textarea>
+
+                            <label class="text-[11px] font-semibold tracking-wide uppercase opacity-70">
+                                Not (İsteğe Bağlı)
+                            </label>
+
+                            <textarea id="fNote"
+                                      rows="2"
+                                      placeholder="Örn: Koyu kumral üzerine ışıltı istiyorum..."
+                                      class="mt-1.5 w-full rounded-[18px] border border-ink/10 bg-white p-4 text-[14px] placeholder:text-ink/40 resize-none"></textarea>
+
                         </div>
 
+
                         <label class="md:col-span-2 flex gap-2.5 items-start mt-1 cursor-pointer group">
-                            <input id="fKvkk" type="checkbox" required class="mt-0.5 w-4 h-4 rounded border-ink/20 accent-ink">
+
+                            <input id="fKvkk"
+                                   type="checkbox"
+                                   required
+                                   class="mt-0.5 w-4 h-4 rounded border-ink/20 accent-ink">
+
                             <span class="text-[11px] leading-[1.5] opacity-60 group-hover:opacity-80">
+
                                 Randevu onayı ve kampanyalar için WhatsApp üzerinden iletişime geçilmesini onaylıyorum.
-                                <a href="#" class="underline decoration-ink/20">KVKK metni</a>
+
+                                <a href="#" class="underline decoration-ink/20">
+                                    KVKK metni
+                                </a>
+
                             </span>
+
                         </label>
 
-                        <button type="submit" class="md:col-span-2 mt-2 h-[52px] rounded-full gold-gradient text-white font-semibold text-[14px] tracking-wide flex items-center justify-center gap-2.5 hover:brightness-[1.05] active:brightness-95 transition-all shadow-[0_8px_24px_rgba(212,175,55,0.35)]">
-                            <i data-lucide="message-circle" class="w-5 h-5 fill-white"></i>
+
+                        <button type="submit"
+                                class="md:col-span-2 mt-2 h-[52px] rounded-full gold-gradient text-white font-semibold text-[14px] tracking-wide flex items-center justify-center gap-2.5 hover:brightness-[1.05] active:brightness-95 transition-all shadow-[0_8px_24px_rgba(212,175,55,0.35)]">
+
+                            <i data-lucide="message-circle"
+                               class="w-5 h-5 fill-white"></i>
+
                             WhatsApp ile Randevu Oluştur
+
                         </button>
 
+
                         <p class="md:col-span-2 text-center text-[11px] opacity-50">
+
                             Butona tıkladığınızda WhatsApp otomatik olarak açılacaktır.
+
                         </p>
+
                     </form>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
     <!-- About & Content -->
-    <section id="hakkimizda" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 md:py-28">
+    <section id="hakkimizda"
+             class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 md:py-28">
+
         <div class="grid lg:grid-cols-[1.1fr_0.9fr] gap-12 lg:gap-20 items-center">
 
+
             <div class="relative order-2 lg:order-1">
+
                 <div class="rounded-[32px] overflow-hidden bg-pudra aspect-[4/3] md:aspect-[4/3.2] relative">
 
                     <!-- SADECE HAKKIMIZDA GÖRSELİ DEĞİŞTİRİLDİ -->
+
                     <img src="unnamed (9).jpg"
                          alt="GLOW STUDIO Bayraklı"
                          class="w-full h-full object-cover">
 
                     <div class="absolute inset-0 bg-ink/10"></div>
 
+
                     <div class="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-ink/80 to-transparent">
+
                         <div class="flex gap-3">
+
                             <div class="bg-white/95 backdrop-blur rounded-full px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase flex items-center gap-1.5">
+
                                 <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+
                                 Hijyen Sertifikalı
+
                             </div>
+
                             <div class="bg-white/95 backdrop-blur rounded-full px-3 py-1.5 text-[10px] font-bold tracking-widest uppercase">
+
                                 Premium Ürünler
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- Stats floating -->
                 <div class="absolute -bottom-8 -right-4 md:-right-10 bg-white rounded-[20px] shadow-[0_16px_40px_rgba(0,0,0,0.12)] p-5 flex gap-6 border border-ink/5">
+
                     <div>
-                        <div class="font-serif text-[28px] leading-none font-bold">8+</div>
-                        <div class="text-[10px] uppercase tracking-widest opacity-60 mt-1">Yıl Deneyim</div>
+
+                        <div class="font-serif text-[28px] leading-none font-bold">
+                            8+
+                        </div>
+
+                        <div class="text-[10px] uppercase tracking-widest opacity-60 mt-1">
+                            Yıl Deneyim
+                        </div>
+
                     </div>
+
 
                     <div class="w-px bg-ink/10"></div>
 
+
                     <div>
-                        <div class="font-serif text-[28px] leading-none font-bold">5.4k</div>
-                        <div class="text-[10px] uppercase tracking-widest opacity-60 mt-1">Mutlu Misafir</div>
+
+                        <div class="font-serif text-[28px] leading-none font-bold">
+                            5.4k
+                        </div>
+
+                        <div class="text-[10px] uppercase tracking-widest opacity-60 mt-1">
+                            Mutlu Misafir
+                        </div>
+
                     </div>
+
                 </div>
+
             </div>
+
 
             <div class="order-1 lg:order-2">
+
                 <div class="inline-flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase font-bold">
-                    <span class="w-10 h-px bg-gold"></span> Hakkımızda
+
+                    <span class="w-10 h-px bg-gold"></span>
+
+                    Hakkımızda
+
                 </div>
+
 
                 <h2 class="font-serif text-[36px] md:text-[52px] leading-[0.9] mt-5">
+
                     Lüks, samimiyetle<br>
-                    <span class="italic font-normal">buluştuğunda</span><br>
+
+                    <span class="italic font-normal">
+                        buluştuğunda
+                    </span>
+
+                    <br>
+
                     GLOW doğar.
+
                 </h2>
 
+
                 <div class="mt-6 space-y-4 text-[14px] leading-[1.8] text-ink/70">
-                    <p>
-                        Bayraklı’nın kalbinde, sokağın yeşiliyle çevrili butik stüdyomuzda, kalabalık kuaför salonlarının aksine sadece size odaklanıyoruz. Her randevu, size özel ayrılmış bir zaman dilimi.
-                    </p>
 
                     <p>
-                        Saçınızın dokusunu, yüz hattınızı ve yaşam tarzınızı analiz ederek;
-                        <strong class="text-ink font-semibold">trendleri değil, size yakışanı</strong>
-                        tasarlıyoruz. Kullandığımız tüm ürünler %100 orijinal, profesyonel segment.
+
+                        Bayraklı’nın kalbinde, sokağın yeşiliyle çevrili butik stüdyomuzda,
+                        kalabalık kuaför salonlarının aksine sadece size odaklanıyoruz.
+                        Her randevu, size özel ayrılmış bir zaman dilimi.
+
                     </p>
+
+
+                    <p>
+
+                        Saçınızın dokusunu, yüz hattınızı ve yaşam tarzınızı analiz ederek;
+
+                        <strong class="text-ink font-semibold">
+                            trendleri değil, size yakışanı
+                        </strong>
+
+                        tasarlıyoruz.
+
+                        Kullandığımız tüm ürünler %100 orijinal, profesyonel segment.
+
+                    </p>
+
                 </div>
+
 
                 <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 gap-3">
-                    <div class="flex gap-3 items-start">
-                        <span class="w-7 h-7 rounded-full bg-pudra flex items-center justify-center shrink-0 mt-0.5">
-                            <i data-lucide="check" class="w-3.5 h-3.5"></i>
-                        </span>
-                        <span class="text-[13px] leading-[1.5]">
-                            <strong>Kişiye özel</strong> renk formülasyonu & kesim tekniği
-                        </span>
-                    </div>
 
                     <div class="flex gap-3 items-start">
+
                         <span class="w-7 h-7 rounded-full bg-pudra flex items-center justify-center shrink-0 mt-0.5">
+
                             <i data-lucide="check" class="w-3.5 h-3.5"></i>
+
                         </span>
+
                         <span class="text-[13px] leading-[1.5]">
-                            <strong>Tek kullanımlık</strong> havlu, önlük ve hijyen kiti
+
+                            <strong>Kişiye özel</strong>
+                            renk formülasyonu & kesim tekniği
+
                         </span>
+
                     </div>
 
-                    <div class="flex gap-3 items-start">
-                        <span class="w-7 h-7 rounded-full bg-pudra flex items-center justify-center shrink-0 mt-0.5">
-                            <i data-lucide="check" class="w-3.5 h-3.5"></i>
-                        </span>
-                        <span class="text-[13px] leading-[1.5]">
-                            <strong>İkram & konfor</strong> alanı, bitkilerle çevrili teras
-                        </span>
-                    </div>
 
                     <div class="flex gap-3 items-start">
+
                         <span class="w-7 h-7 rounded-full bg-pudra flex items-center justify-center shrink-0 mt-0.5">
+
                             <i data-lucide="check" class="w-3.5 h-3.5"></i>
+
                         </span>
+
                         <span class="text-[13px] leading-[1.5]">
-                            <strong>Ücretsiz</strong> saç analizi ve ev bakım reçetesi
+
+                            <strong>Tek kullanımlık</strong>
+                            havlu, önlük ve hijyen kiti
+
                         </span>
+
                     </div>
+
+
+                    <div class="flex gap-3 items-start">
+
+                        <span class="w-7 h-7 rounded-full bg-pudra flex items-center justify-center shrink-0 mt-0.5">
+
+                            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+
+                        </span>
+
+                        <span class="text-[13px] leading-[1.5]">
+
+                            <strong>İkram & konfor</strong>
+                            alanı, bitkilerle çevrili teras
+
+                        </span>
+
+                    </div>
+
+
+                    <div class="flex gap-3 items-start">
+
+                        <span class="w-7 h-7 rounded-full bg-pudra flex items-center justify-center shrink-0 mt-0.5">
+
+                            <i data-lucide="check" class="w-3.5 h-3.5"></i>
+
+                        </span>
+
+                        <span class="text-[13px] leading-[1.5]">
+
+                            <strong>Ücretsiz</strong>
+                            saç analizi ve ev bakım reçetesi
+
+                        </span>
+
+                    </div>
+
                 </div>
+
 
                 <div class="mt-10 flex items-center gap-4">
-                    <img src="https://i.pravatar.cc/100?img=26" class="w-12 h-12 rounded-full object-cover" alt="">
+
+                    <img src="https://i.pravatar.cc/100?img=26"
+                         class="w-12 h-12 rounded-full object-cover"
+                         alt="">
+
                     <div class="leading-tight">
-                        <div class="font-serif font-semibold text-[16px]">Ece G.</div>
-                        <div class="text-[12px] opacity-60">Kurucu & Renk Uzmanı • 12 Yıl</div>
+
+                        <div class="font-serif font-semibold text-[16px]">
+                            Ece G.
+                        </div>
+
+                        <div class="text-[12px] opacity-60">
+                            Kurucu & Renk Uzmanı • 12 Yıl
+                        </div>
+
                     </div>
+
 
                     <div class="ml-auto hidden sm:flex items-center gap-1.5 text-[11px] font-semibold border border-ink/10 rounded-full px-3 py-1.5">
-                        <i data-lucide="award" class="w-3.5 h-3.5 text-gold"></i>
+
+                        <i data-lucide="award"
+                           class="w-3.5 h-3.5 text-gold"></i>
+
                         L'Oréal Pro Artist
+
                     </div>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
     <!-- Services -->
-    <section id="hizmetlerimiz" class="bg-ink text-[#F9F1F2] relative overflow-hidden noise">
+    <section id="hizmetlerimiz"
+             class="bg-ink text-[#F9F1F2] relative overflow-hidden noise">
+
         <div class="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[800px] bg-gradient-to-b from-gold/10 to-transparent rounded-full blur-[80px] pointer-events-none"></div>
 
+
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 md:py-24 relative">
+
             <div class="flex flex-col md:flex-row md:items-end justify-between gap-6">
 
                 <div>
+
                     <div class="inline-flex items-center gap-3 text-[11px] tracking-[0.22em] uppercase font-bold text-roseGold">
-                        <span class="w-10 h-px bg-roseGold"></span> Hizmetlerimiz
+
+                        <span class="w-10 h-px bg-roseGold"></span>
+
+                        Hizmetlerimiz
+
                     </div>
 
+
                     <h2 class="font-serif text-[36px] md:text-[52px] leading-[0.9] mt-4">
+
                         Her saç bir imza,<br>
-                        <span class="italic text-roseGold font-normal">her dokunuş bir ritüel.</span>
+
+                        <span class="italic text-roseGold font-normal">
+                            her dokunuş bir ritüel.
+                        </span>
+
                     </h2>
+
                 </div>
 
+
                 <p class="max-w-[36ch] text-[13px] leading-[1.7] opacity-60">
-                    Fiyatlar saç uzunluğu ve yoğunluğuna göre değişir. Net fiyat randevu öncesi WhatsApp’tan iletilir.
+
+                    Fiyatlar saç uzunluğu ve yoğunluğuna göre değişir.
+                    Net fiyat randevu öncesi WhatsApp’tan iletilir.
+
                 </p>
+
             </div>
+
 
             <div class="mt-12 grid md:grid-cols-2 lg:grid-cols-3 gap-[1px] bg-white/10 border border-white/10 rounded-[28px] overflow-hidden">
 
+
                 <!-- Service 1 -->
                 <div class="group bg-[#2B232A] p-7 md:p-8 hover:bg-[#322A30] transition-colors relative">
+
                     <div class="flex justify-between items-start">
+
                         <div class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-colors">
-                            <i data-lucide="scissors" class="w-5 h-5 text-champagne"></i>
+
+                            <i data-lucide="scissors"
+                               class="w-5 h-5 text-champagne"></i>
+
                         </div>
-                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">60-90 dk</span>
+
+                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">
+                            60-90 dk
+                        </span>
+
                     </div>
 
-                    <h3 class="font-serif text-[22px] mt-6">Kesim & Tasarım</h3>
+
+                    <h3 class="font-serif text-[22px] mt-6">
+                        Kesim & Tasarım
+                    </h3>
+
                     <p class="text-[13px] leading-[1.6] opacity-60 mt-2">
-                        Yüz hattı analizi ile kişiye özel kesim, fön ve evde kolay kullanım için şekillendirme eğitimi.
+
+                        Yüz hattı analizi ile kişiye özel kesim,
+                        fön ve evde kolay kullanım için şekillendirme eğitimi.
+
                     </p>
 
+
                     <div class="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold/0 group-hover:via-gold/50 to-transparent transition-all"></div>
+
                 </div>
+
 
                 <!-- Service 2 -->
                 <div class="group bg-[#2B232A] p-7 md:p-8 hover:bg-[#322A30] transition-colors relative">
+
                     <div class="flex justify-between items-start">
+
                         <div class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-colors">
-                            <i data-lucide="palette" class="w-5 h-5 text-champagne"></i>
+
+                            <i data-lucide="palette"
+                               class="w-5 h-5 text-champagne"></i>
+
                         </div>
-                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">3-4 saat</span>
+
+                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">
+                            3-4 saat
+                        </span>
+
                     </div>
 
-                    <h3 class="font-serif text-[22px] mt-6">Balyaj & Renk</h3>
+
+                    <h3 class="font-serif text-[22px] mt-6">
+                        Balyaj & Renk
+                    </h3>
+
                     <p class="text-[13px] leading-[1.6] opacity-60 mt-2">
-                        Soğuk sarıdan sıcak karamele; yıpratmayan formüllerle ışıltı, ombre ve full renklendirme.
+
+                        Soğuk sarıdan sıcak karamele;
+                        yıpratmayan formüllerle ışıltı, ombre ve full renklendirme.
+
                     </p>
 
+
                     <div class="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold/0 group-hover:via-gold/50 to-transparent transition-all"></div>
+
                 </div>
+
 
                 <!-- Service 3 -->
                 <div class="group bg-[#2B232A] p-7 md:p-8 hover:bg-[#322A30] transition-colors relative">
+
                     <div class="flex justify-between items-start">
+
                         <div class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-colors">
-                            <i data-lucide="sparkles" class="w-5 h-5 text-champagne"></i>
+
+                            <i data-lucide="sparkles"
+                               class="w-5 h-5 text-champagne"></i>
+
                         </div>
+
 
                         <span class="text-[11px] tracking-widest uppercase bg-gold text-ink font-bold rounded-full px-2.5 py-1">
                             En Çok Tercih Edilen
                         </span>
+
                     </div>
 
-                    <h3 class="font-serif text-[22px] mt-6">Keratin & Bakım</h3>
+
+                    <h3 class="font-serif text-[22px] mt-6">
+                        Keratin & Bakım
+                    </h3>
+
                     <p class="text-[13px] leading-[1.6] opacity-60 mt-2">
-                        Kuru ve işlem görmüş saçlar için onarıcı bakım, keratin botox ve parlaklık ritüeli.
+
+                        Kuru ve işlem görmüş saçlar için onarıcı bakım,
+                        keratin botox ve parlaklık ritüeli.
+
                     </p>
 
+
                     <div class="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold/0 group-hover:via-gold/50 to-transparent transition-all"></div>
+
                 </div>
+
 
                 <!-- Service 4 -->
                 <div class="group bg-[#2B232A] p-7 md:p-8 hover:bg-[#322A30] transition-colors relative">
+
                     <div class="flex justify-between items-start">
+
                         <div class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-colors">
-                            <i data-lucide="crown" class="w-5 h-5 text-champagne"></i>
+
+                            <i data-lucide="crown"
+                               class="w-5 h-5 text-champagne"></i>
+
                         </div>
 
-                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">4-6 saat</span>
+
+                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">
+                            4-6 saat
+                        </span>
+
                     </div>
 
-                    <h3 class="font-serif text-[22px] mt-6">Gelin Saçı & Topuz</h3>
+
+                    <h3 class="font-serif text-[22px] mt-6">
+                        Gelin Saçı & Topuz
+                    </h3>
+
                     <p class="text-[13px] leading-[1.6] opacity-60 mt-2">
-                        Prova dahil gelin saçı tasarımı, duvak uyumu ve gün boyu kalıcılık garantisi.
+
+                        Prova dahil gelin saçı tasarımı,
+                        duvak uyumu ve gün boyu kalıcılık garantisi.
+
                     </p>
 
+
                     <div class="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold/0 group-hover:via-gold/50 to-transparent transition-all"></div>
+
                 </div>
+
 
                 <!-- Service 5 -->
                 <div class="group bg-[#2B232A] p-7 md:p-8 hover:bg-[#322A30] transition-colors relative">
+
                     <div class="flex justify-between items-start">
+
                         <div class="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:border-gold/30 transition-colors">
-                            <i data-lucide="eye" class="w-5 h-5 text-champagne"></i>
+
+                            <i data-lucide="eye"
+                               class="w-5 h-5 text-champagne"></i>
+
                         </div>
 
-                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">45 dk</span>
+
+                        <span class="text-[11px] tracking-widest uppercase opacity-40 border border-white/10 rounded-full px-2.5 py-1">
+                            45 dk
+                        </span>
+
                     </div>
 
-                    <h3 class="font-serif text-[22px] mt-6">Kaş & Kirpik</h3>
+
+                    <h3 class="font-serif text-[22px] mt-6">
+                        Kaş & Kirpik
+                    </h3>
+
                     <p class="text-[13px] leading-[1.6] opacity-60 mt-2">
+
                         Kirpik lifting, kaş laminasyonu ve şekillendirme ile bakışlara derinlik.
+
                     </p>
 
+
                     <div class="absolute bottom-0 left-8 right-8 h-px bg-gradient-to-r from-transparent via-gold/0 group-hover:via-gold/50 to-transparent transition-all"></div>
+
                 </div>
+
 
                 <!-- Service 6 -->
                 <div class="group bg-[#322A30] p-7 md:p-8 hover:bg-[#3A3338] transition-colors relative flex flex-col justify-between">
+
                     <div>
+
                         <div class="w-11 h-11 rounded-full gold-gradient flex items-center justify-center">
-                            <i data-lucide="gift" class="w-5 h-5 text-white"></i>
+
+                            <i data-lucide="gift"
+                               class="w-5 h-5 text-white"></i>
+
                         </div>
 
-                        <h3 class="font-serif text-[22px] mt-6">Size özel paket oluşturalım mı?</h3>
+
+                        <h3 class="font-serif text-[22px] mt-6">
+                            Size özel paket oluşturalım mı?
+                        </h3>
+
 
                         <p class="text-[13px] leading-[1.6] opacity-60 mt-2">
-                            İhtiyacınıza göre kombin yapın, avantajlı fiyat alın. WhatsApp’tan saç fotoğrafı göndermeniz yeterli.
+
+                            İhtiyacınıza göre kombin yapın, avantajlı fiyat alın.
+                            WhatsApp’tan saç fotoğrafı göndermeniz yeterli.
+
                         </p>
+
                     </div>
 
-                    <a href="#randevu" class="mt-6 h-11 rounded-full bg-white text-ink font-semibold text-[13px] flex items-center justify-center gap-2 hover:bg-pudra transition-colors">
+
+                    <a href="#randevu"
+                       class="mt-6 h-11 rounded-full bg-white text-ink font-semibold text-[13px] flex items-center justify-center gap-2 hover:bg-pudra transition-colors">
+
                         Fotoğraf Gönder & Fiyat Al
+
                         <i data-lucide="arrow-up-right" class="w-4 h-4"></i>
+
                     </a>
+
                 </div>
+
             </div>
+
         </div>
+
     </section>
 
+
     <!-- Reviews -->
-    <section id="yorumlar" class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 md:py-24">
+    <section id="yorumlar"
+             class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 md:py-24">
 
         <div class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+
             <div>
+
                 <div class="inline-flex items-center gap-2 text-[11px] tracking-[0.22em] uppercase font-bold">
-                    <span class="w-8 h-px bg-ink"></span> Gerçek Yorumlar
+
+                    <span class="w-8 h-px bg-ink"></span>
+
+                    Gerçek Yorumlar
+
                 </div>
 
+
                 <h2 class="font-serif text-[36px] md:text-[48px] leading-[0.9] mt-4">
+
                     Kadınlar anlatıyor,<br>
-                    <span class="italic font-normal">Google doğruluyor.</span>
+
+                    <span class="italic font-normal">
+                        Google doğruluyor.
+                    </span>
+
                 </h2>
+
             </div>
+
 
             <div class="flex items-center gap-3 bg-white border border-ink/10 rounded-full px-4 py-2 self-start md:self-auto">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg" class="w-5 h-5" alt="">
-                <span class="text-[13px] font-semibold">4.9</span>
 
-                <span class="flex text-gold">
-                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
-                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
-                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
-                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
-                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Google_%22G%22_logo.svg"
+                     class="w-5 h-5"
+                     alt="">
+
+                <span class="text-[13px] font-semibold">
+                    4.9
                 </span>
 
-                <span class="text-[11px] opacity-60">847 yorum</span>
+
+                <span class="flex text-gold">
+
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+                    <i data-lucide="star" class="w-3.5 h-3.5 fill-gold"></i>
+
+                </span>
+
+
+                <span class="text-[11px] opacity-60">
+                    847 yorum
+                </span>
+
             </div>
+
         </div>
+
 
         <div class="mt-10 grid md:grid-cols-3 gap-4 md:gap-6">
 
+
             <!-- Review 1 -->
             <div class="rounded-[24px] bg-white border border-ink/10 p-6 md:p-7 flex flex-col">
+
                 <div class="flex gap-1 text-gold">
+
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+
                 </div>
+
 
                 <p class="mt-4 text-[14px] leading-[1.7]">
-                    “2022’den beri saçımı gönül rahatlığıyla emanet ettiğim tek kişi Efe Bey. Her gittiğimde aynı özen, aynı ilgi ve en önemlisi her seferinde istediğimden daha güzel sonuç. Yıllardır hiç pişman olmadım, artık kuaförümden çok “iyi ki tanımışım” dediğim bir yer oldu. Emeğine, ilgine ve güzel enerjine sağlık. Kesinlikle herkese gönül rahatlığıyla tavsiye ediyorum.”
+
+                    “2022’den beri saçımı gönül rahatlığıyla emanet ettiğim tek kişi Efe Bey.
+                    Her gittiğimde aynı özen, aynı ilgi ve en önemlisi her seferinde istediğimden
+                    daha güzel sonuç. Yıllardır hiç pişman olmadım, artık kuaförümden çok
+                    “iyi ki tanımışım” dediğim bir yer oldu. Emeğine, ilgine ve güzel enerjine sağlık.
+                    Kesinlikle herkese gönül rahatlığıyla tavsiye ediyorum.”
+
                 </p>
 
+
                 <div class="mt-auto pt-6 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-pudra flex items-center justify-center font-bold text-[12px]">EM</div>
-                    <div class="leading-tight">
-                        <div class="text-[13px] font-semibold">Ece Morkaya</div>
-                        <div class="text-[11px] opacity-60">3 yorum • 3 hafta önce</div>
+
+                    <div class="w-9 h-9 rounded-full bg-pudra flex items-center justify-center font-bold text-[12px]">
+                        EM
                     </div>
-                    <span class="ml-auto text-[10px] opacity-40">Google</span>
+
+                    <div class="leading-tight">
+
+                        <div class="text-[13px] font-semibold">
+                            Ece Morkaya
+                        </div>
+
+                        <div class="text-[11px] opacity-60">
+                            3 yorum • 3 hafta önce
+                        </div>
+
+                    </div>
+
+                    <span class="ml-auto text-[10px] opacity-40">
+                        Google
+                    </span>
+
                 </div>
+
             </div>
+
 
             <!-- Review 2 -->
             <div class="rounded-[24px] bg-ink text-white p-6 md:p-7 flex flex-col relative overflow-hidden">
+
                 <div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-gold/20 to-transparent rounded-full blur-xl"></div>
 
+
                 <div class="flex gap-1 text-gold">
+
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+
                 </div>
+
 
                 <p class="mt-4 text-[14px] leading-[1.7] opacity-90">
-                    “Şahanesiniz tek kelime ile mutheşemm ben ilk defa bir kuaförde bu kaşar memnun kaldımmm her seferinde tek adresim burasıııı”
+
+                    “Şahanesiniz tek kelime ile mutheşemm ben ilk defa bir kuaförde bu kaşar
+                    memnun kaldımmm her seferinde tek adresim burasıııı”
+
                 </p>
 
+
                 <div class="mt-auto pt-6 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center font-bold text-[12px]">MU</div>
-                    <div class="leading-tight">
-                        <div class="text-[13px] font-semibold">Melisa Ugurtas</div>
-                        <div class="text-[11px] opacity-60">2 yorum · 3 fotoğraf • 7 ay önce</div>
+
+                    <div class="w-9 h-9 rounded-full bg-white/10 flex items-center justify-center font-bold text-[12px]">
+                        MU
                     </div>
+
+                    <div class="leading-tight">
+
+                        <div class="text-[13px] font-semibold">
+                            Melisa Ugurtas
+                        </div>
+
+                        <div class="text-[11px] opacity-60">
+                            2 yorum · 3 fotoğraf • 7 ay önce
+                        </div>
+
+                    </div>
+
+
                     <span class="ml-auto w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-                        <i data-lucide="badge-check" class="w-4 h-4 text-gold"></i>
+
+                        <i data-lucide="badge-check"
+                           class="w-4 h-4 text-gold"></i>
+
                     </span>
+
                 </div>
+
             </div>
+
 
             <!-- Review 3 -->
             <div class="rounded-[24px] bg-pudra border border-champagne/60 p-6 md:p-7 flex flex-col">
 
                 <div class="flex gap-1 text-gold">
+
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
                     <i data-lucide="star" class="w-4 h-4 fill-gold"></i>
+
                 </div>
+
 
                 <p class="mt-4 text-[14px] leading-[1.7]">
-                    “Özellikle Efe Bey’in işine olan özeni ve müşterisine yaklaşımı gerçekten çok iyi. Her zaman güler yüzlü, ilgili ve yaptığı işin arkasında duran biri. Gönül rahatlığıyla tavsiye edilir, emeğinize sağlık Efe. 👏”
+
+                    “Özellikle Efe Bey’in işine olan özeni ve müşterisine yaklaşımı gerçekten çok iyi.
+                    Her zaman güler yüzlü, ilgili ve yaptığı işin arkasında duran biri.
+                    Gönül rahatlığıyla tavsiye edilir, emeğinize sağlık Efe. 👏”
+
                 </p>
 
+
                 <div class="mt-auto pt-6 flex items-center gap-3">
-                    <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center font-bold text-[12px]">BT</div>
-                    <div class="leading-tight">
-                        <div class="text-[13px] font-semibold">baran turan</div>
-                        <div class="text-[11px] opacity-60">6 yorum · 7 fotoğraf • 3 hafta önce</div>
+
+                    <div class="w-9 h-9 rounded-full bg-white flex items-center justify-center font-bold text-[12px]">
+                        BT
                     </div>
-                    <span class="ml-auto text-[10px] opacity-40">Google</span>
+
+                    <div class="leading-tight">
+
+                        <div class="text-[13px] font-semibold">
+                            baran turan
+                        </div>
+
+                        <div class="text-[11px] opacity-60">
+                            6 yorum · 7 fotoğraf • 3 hafta önce
+                        </div>
+
+                    </div>
+
+                    <span class="ml-auto text-[10px] opacity-40">
+                        Google
+                    </span>
+
                 </div>
+
             </div>
+
         </div>
+
 
         <div class="mt-6 grid md:grid-cols-3 gap-4 md:gap-6">
 
+
             <div class="md:col-span-2 rounded-[24px] bg-white border border-ink/10 p-6 flex items-center gap-4">
+
                 <div class="hidden md:flex -space-x-2">
-                    <img src="https://i.pravatar.cc/100?img=11" class="w-8 h-8 rounded-full border-2 border-white" alt="">
-                    <img src="https://i.pravatar.cc/100?img=12" class="w-8 h-8 rounded-full border-2 border-white" alt="">
-                    <img src="https://i.pravatar.cc/100?img=13" class="w-8 h-8 rounded-full border-2 border-white" alt="">
-                    <img src="https://i.pravatar.cc/100?img=14" class="w-8 h-8 rounded-full border-2 border-white" alt="">
+
+                    <img src="https://i.pravatar.cc/100?img=11"
+                         class="w-8 h-8 rounded-full border-2 border-white"
+                         alt="">
+
+                    <img src="https://i.pravatar.cc/100?img=12"
+                         class="w-8 h-8 rounded-full border-2 border-white"
+                         alt="">
+
+                    <img src="https://i.pravatar.cc/100?img=13"
+                         class="w-8 h-8 rounded-full border-2 border-white"
+                         alt="">
+
+                    <img src="https://i.pravatar.cc/100?img=14"
+                         class="w-8 h-8 rounded-full border-2 border-white"
+                         alt="">
+
                 </div>
+
 
                 <div class="text-[13px] leading-[1.5]">
-                    <strong>Bu hafta 37 kadın</strong> ilk kez GLOW’u deneyimledi ve tamamı 5 yıldız verdi.
-                    <a href="#randevu" class="underline decoration-gold underline-offset-4 font-semibold">Siz de katılın →</a>
+
+                    <strong>
+                        Bu hafta 37 kadın
+                    </strong>
+
+                    ilk kez GLOW’u deneyimledi ve tamamı 5 yıldız verdi.
+
+                    <a href="#randevu"
+                       class="underline decoration-gold underline-offset-4 font-semibold">
+                        Siz de katılın →
+                    </a>
+
                 </div>
+
             </div>
 
+
             <div class="rounded-[24px] bg-champagne/40 border border-champagne p-6 flex items-center justify-between">
-                <div class="text-[13px] font-semibold">Tüm yorumları Google’da gör</div>
+
+                <div class="text-[13px] font-semibold">
+                    Tüm yorumları Google’da gör
+                </div>
+
 
                 <a href="https://maps.app.goo.gl/TfvUZXLeFGgQmGH47"
                    target="_blank"
                    class="w-9 h-9 rounded-full bg-ink text-white flex items-center justify-center hover:bg-black transition-colors">
-                    <i data-lucide="external-link" class="w-4 h-4"></i>
+
+                    <i data-lucide="external-link"
+                       class="w-4 h-4"></i>
+
                 </a>
+
             </div>
+
         </div>
+
     </section>
 
+
     <!-- FAQ -->
-    <section id="sss" class="bg-white border-y border-ink/5">
+    <section id="sss"
+             class="bg-white border-y border-ink/5">
+
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-16 md:py-24 grid lg:grid-cols-[0.8fr_1.2fr] gap-12">
 
+
             <div>
+
                 <div class="inline-flex items-center gap-2 text-[11px] tracking-[0.22em] uppercase font-bold text-gold">
-                    <span class="w-8 h-px bg-gold"></span> SSS
+
+                    <span class="w-8 h-px bg-gold"></span>
+
+                    SSS
+
                 </div>
 
+
                 <h2 class="font-serif text-[36px] md:text-[44px] leading-[0.9] mt-4">
-                    Aklınızdaki<br>her şey.
+
+                    Aklınızdaki<br>
+                    her şey.
+
                 </h2>
 
+
                 <p class="mt-4 text-[13px] leading-[1.7] opacity-60 max-w-[32ch]">
-                    Randevu öncesi en çok sorulanları yanıtladık. Başka bir sorunuz varsa WhatsApp’tan anında yazabilirsiniz.
+
+                    Randevu öncesi en çok sorulanları yanıtladık.
+                    Başka bir sorunuz varsa WhatsApp’tan anında yazabilirsiniz.
+
                 </p>
+
 
                 <a href="https://wa.me/905374864299"
                    target="_blank"
                    class="mt-6 inline-flex h-10 px-5 rounded-full bg-pudra border border-champagne text-[13px] font-semibold items-center gap-2 hover:bg-champagne transition-colors">
+
                     <i data-lucide="message-circle" class="w-4 h-4"></i>
+
                     WhatsApp Destek
+
                 </a>
+
             </div>
+
 
             <div class="space-y-2">
 
+
                 <!-- FAQ 1 -->
                 <div class="faq-item border border-ink/10 rounded-[18px] bg-paper overflow-hidden">
+
                     <button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left">
-                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">Randevu iptal / değişiklik yapabilir miyim?</span>
-                        <span class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center shrink-0 transition-transform">
-                            <i data-lucide="plus" class="w-4 h-4 faq-icon"></i>
+
+                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">
+                            Randevu iptal / değişiklik yapabilir miyim?
                         </span>
+
+                        <span class="w-8 h-8 rounded-full bg-ink text-white flex items-center justify-center shrink-0 transition-transform">
+
+                            <i data-lucide="plus"
+                               class="w-4 h-4 faq-icon"></i>
+
+                        </span>
+
                     </button>
 
+
                     <div class="accordion-content grid">
+
                         <div class="accordion-inner">
+
                             <div class="px-5 md:px-6 pb-6 text-[13px] leading-[1.7] opacity-70">
-                                Elbette. Randevunuzdan 24 saat öncesine kadar ücretsiz iptal veya tarih değişikliği yapabilirsiniz. WhatsApp hattımızdan tek mesaj yeterli. Son 24 saat içinde iptallerde bir sonraki randevunuzda %15 bakım hediyemiz var.
+
+                                Elbette. Randevunuzdan 24 saat öncesine kadar ücretsiz iptal
+                                veya tarih değişikliği yapabilirsiniz. WhatsApp hattımızdan tek mesaj yeterli.
+                                Son 24 saat içinde iptallerde bir sonraki randevunuzda %15 bakım hediyemiz var.
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- FAQ 2 -->
                 <div class="faq-item border border-ink/10 rounded-[18px] bg-paper overflow-hidden">
+
                     <button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left">
-                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">Hangi ürünleri kullanıyorsunuz? Saçım yıpranır mı?</span>
-                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
-                            <i data-lucide="plus" class="w-4 h-4 faq-icon"></i>
+
+                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">
+                            Hangi ürünleri kullanıyorsunuz? Saçım yıpranır mı?
                         </span>
+
+                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
+
+                            <i data-lucide="plus"
+                               class="w-4 h-4 faq-icon"></i>
+
+                        </span>
+
                     </button>
 
+
                     <div class="accordion-content grid">
+
                         <div class="accordion-inner">
+
                             <div class="px-5 md:px-6 pb-6 text-[13px] leading-[1.7] opacity-70">
-                                Sadece L'Oréal Professionnel, Kérastase ve Olaplex orijinal ürünler kullanıyoruz. Her renklendirme öncesi saç elastikiyet testi yapıyor, gerekirse bakım + renk kombinasyonu uyguluyoruz. Yıpranma riskini en aza indirmek bizim imzamız.
+
+                                Sadece L'Oréal Professionnel, Kérastase ve Olaplex orijinal ürünler kullanıyoruz.
+                                Her renklendirme öncesi saç elastikiyet testi yapıyor, gerekirse bakım + renk kombinasyonu uyguluyoruz.
+                                Yıpranma riskini en aza indirmek bizim imzamız.
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- FAQ 3 -->
                 <div class="faq-item border border-ink/10 rounded-[18px] bg-paper overflow-hidden">
+
                     <button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left">
-                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">Fiyatı nasıl öğrenebilirim? Net fiyat veriyor musunuz?</span>
-                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
-                            <i data-lucide="plus" class="w-4 h-4 faq-icon"></i>
+
+                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">
+                            Fiyatı nasıl öğrenebilirim? Net fiyat veriyor musunuz?
                         </span>
+
+                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
+
+                            <i data-lucide="plus"
+                               class="w-4 h-4 faq-icon"></i>
+
+                        </span>
+
                     </button>
 
+
                     <div class="accordion-content grid">
+
                         <div class="accordion-inner">
+
                             <div class="px-5 md:px-6 pb-6 text-[13px] leading-[1.7] opacity-70">
-                                Saç uzunluğu, yoğunluğu ve önceki işlem geçmişine göre fiyat değişir. En sağlıklısı: WhatsApp’tan (537 486 42 99) güncel saç fotoğrafınızı gönderin, 10 dakika içinde net fiyat ve süre bilgisi iletelim. Sürpriz ücret yok.
+
+                                Saç uzunluğu, yoğunluğu ve önceki işlem geçmişine göre fiyat değişir.
+                                En sağlıklısı: WhatsApp’tan (537 486 42 99) güncel saç fotoğrafınızı gönderin,
+                                10 dakika içinde net fiyat ve süre bilgisi iletelim. Sürpriz ücret yok.
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- FAQ 4 -->
                 <div class="faq-item border border-ink/10 rounded-[18px] bg-paper overflow-hidden">
+
                     <button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left">
-                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">Otopark ve konum — nasıl gelebilirim?</span>
-                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
-                            <i data-lucide="plus" class="w-4 h-4 faq-icon"></i>
+
+                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">
+                            Otopark ve konum — nasıl gelebilirim?
                         </span>
+
+                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
+
+                            <i data-lucide="plus"
+                               class="w-4 h-4 faq-icon"></i>
+
+                        </span>
+
                     </button>
 
+
                     <div class="accordion-content grid">
+
                         <div class="accordion-inner">
+
                             <div class="px-5 md:px-6 pb-6 text-[13px] leading-[1.7] opacity-70">
-                                Bayraklı / İzmir'deyiz. Güncel konum ve yol tarifi için harita bağlantımızı kullanabilirsiniz.
+
+                                Bayraklı / İzmir'deyiz.
+                                Güncel konum ve yol tarifi için harita bağlantımızı kullanabilirsiniz.
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
+
 
                 <!-- FAQ 5 -->
                 <div class="faq-item border border-ink/10 rounded-[18px] bg-paper overflow-hidden">
+
                     <button class="faq-btn w-full flex items-center justify-between p-5 md:p-6 text-left">
-                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">Sadece kadınlara mı hizmet veriyorsunuz?</span>
-                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
-                            <i data-lucide="plus" class="w-4 h-4 faq-icon"></i>
+
+                        <span class="font-semibold text-[14px] md:text-[15px] pr-6">
+                            Sadece kadınlara mı hizmet veriyorsunuz?
                         </span>
+
+                        <span class="w-8 h-8 rounded-full bg-white border border-ink/10 flex items-center justify-center shrink-0 transition-transform">
+
+                            <i data-lucide="plus"
+                               class="w-4 h-4 faq-icon"></i>
+
+                        </span>
+
                     </button>
 
+
                     <div class="accordion-content grid">
+
                         <div class="accordion-inner">
+
                             <div class="px-5 md:px-6 pb-6 text-[13px] leading-[1.7] opacity-70">
-                                Evet, GLOW STUDIO sadece kadın misafirlerimize özel butik bir stüdyo. Böylece herkesin kendini daha rahat, güvende ve özel hissettiği bir atmosfer yaratıyoruz.
+
+                                Evet, GLOW STUDIO sadece kadın misafirlerimize özel butik bir stüdyo.
+                                Böylece herkesin kendini daha rahat, güvende ve özel hissettiği bir atmosfer yaratıyoruz.
+
                             </div>
+
                         </div>
+
                     </div>
+
                 </div>
 
             </div>
+
         </div>
+
     </section>
 
+
     <!-- Footer & Contact -->
-    <footer id="iletisim" class="bg-ink text-[#E8D5C4] relative">
+    <footer id="iletisim"
+            class="bg-ink text-[#E8D5C4] relative">
+
         <div class="max-w-[1280px] mx-auto px-6 lg:px-8 py-14 md:py-20">
 
             <div class="grid lg:grid-cols-[1.2fr_0.8fr_0.8fr_1fr] gap-12">
 
+
                 <div>
+
                     <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 rounded-full bg-white text-ink flex items-center justify-center font-serif font-bold text-[20px]">G</div>
+
+                        <div class="w-10 h-10 rounded-full bg-white text-ink flex items-center justify-center font-serif font-bold text-[20px]">
+                            G
+                        </div>
+
 
                         <div class="leading-none">
-                            <div class="font-serif text-[20px] font-bold tracking-[0.18em] text-white">GLOW STUDIO</div>
-                            <div class="text-[9px] tracking-[0.32em] uppercase opacity-60">BAYAN KUAFÖRÜ</div>
+
+                            <div class="font-serif text-[20px] font-bold tracking-[0.18em] text-white">
+                                GLOW STUDIO
+                            </div>
+
+                            <div class="text-[9px] tracking-[0.32em] uppercase opacity-60">
+                                BAYAN KUAFÖRÜ
+                            </div>
+
                         </div>
+
                     </div>
 
+
                     <p class="mt-6 text-[13px] leading-[1.7] opacity-70 max-w-[32ch]">
-                        İzmir Bayraklı’da, zarafet ve hijyenin buluştuğu butik bir lüks stüdyo. Randevu ile çalışıyoruz — kalabalık yok, sadece siz varsınız.
+
+                        İzmir Bayraklı’da, zarafet ve hijyenin buluştuğu butik bir lüks stüdyo.
+                        Randevu ile çalışıyoruz — kalabalık yok, sadece siz varsınız.
+
                     </p>
+
 
                     <div class="mt-6 flex gap-2">
 
-                        <!-- Instagram -->
+
+                        <!-- INSTAGRAM -->
                         <a href="https://www.instagram.com/glowstudioizmir/"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="GLOW STUDIO Instagram"
                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-ink transition-colors">
-                            <i data-lucide="instagram" class="w-4 h-4"></i>
+
+                            <i data-lucide="instagram"
+                               class="w-4 h-4"></i>
+
                         </a>
+
 
                         <!-- WhatsApp -->
                         <a href="https://wa.me/905374864299"
                            target="_blank"
+                           rel="noopener noreferrer"
+                           aria-label="GLOW STUDIO WhatsApp"
                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-ink transition-colors">
-                            <i data-lucide="message-circle" class="w-4 h-4"></i>
+
+                            <i data-lucide="message-circle"
+                               class="w-4 h-4"></i>
+
                         </a>
+
 
                         <!-- Maps -->
                         <a href="https://maps.app.goo.gl/TfvUZXLeFGgQmGH47"
                            target="_blank"
                            rel="noopener noreferrer"
+                           aria-label="GLOW STUDIO Google Maps"
                            class="w-9 h-9 rounded-full bg-white/5 border border-white/10 flex items-center justify-center hover:bg-white hover:text-ink transition-colors">
-                            <i data-lucide="map-pin" class="w-4 h-4"></i>
+
+                            <i data-lucide="map-pin"
+                               class="w-4 h-4"></i>
+
                         </a>
+
                     </div>
+
                 </div>
 
+
                 <div>
-                    <div class="text-[11px] tracking-[0.2em] uppercase font-bold text-white/40">İletişim</div>
+
+                    <div class="text-[11px] tracking-[0.2em] uppercase font-bold text-white/40">
+                        İletişim
+                    </div>
+
 
                     <div class="mt-5 space-y-4 text-[13px]">
 
+
                         <div>
-                            <div class="opacity-50 text-[11px] uppercase tracking-widest">Telefon</div>
-                            <a href="tel:+905374864299" class="font-serif text-[20px] text-white hover:text-roseGold transition-colors">
+
+                            <div class="opacity-50 text-[11px] uppercase tracking-widest">
+                                Telefon
+                            </div>
+
+                            <a href="tel:+905374864299"
+                               class="font-serif text-[20px] text-white hover:text-roseGold transition-colors">
+
                                 537 486 42 99
+
                             </a>
-                            <div class="text-[11px] opacity-50 mt-1">Başında 0 olmadan arayın</div>
+
+                            <div class="text-[11px] opacity-50 mt-1">
+                                Başında 0 olmadan arayın
+                            </div>
+
                         </div>
 
+
                         <div>
-                            <div class="opacity-50 text-[11px] uppercase tracking-widest">WhatsApp</div>
-                            <a href="https://wa.me/905374864299" target="_blank" class="text-white underline decoration-white/20 underline-offset-4">
+
+                            <div class="opacity-50 text-[11px] uppercase tracking-widest">
+                                WhatsApp
+                            </div>
+
+                            <a href="https://wa.me/905374864299"
+                               target="_blank"
+                               rel="noopener noreferrer"
+                               class="text-white underline decoration-white/20 underline-offset-4">
+
                                 wa.me / 5374864299
+
                             </a>
+
                         </div>
 
+
                         <div>
-                            <div class="opacity-50 text-[11px] uppercase tracking-widest">E-posta</div>
-                            <div class="text-white">merhaba@glowstudio.com.tr</div>
+
+                            <div class="opacity-50 text-[11px] uppercase tracking-widest">
+                                E-posta
+                            </div>
+
+                            <div class="text-white">
+                                merhaba@glowstudio.com.tr
+                            </div>
+
                         </div>
 
                     </div>
+
                 </div>
 
+
                 <div>
-                    <div class="text-[11px] tracking-[0.2em] uppercase font-bold text-white/40">Konum & Saatler</div>
+
+                    <div class="text-[11px] tracking-[0.2em] uppercase font-bold text-white/40">
+                        Konum & Saatler
+                    </div>
+
 
                     <div class="mt-5 space-y-4 text-[13px] leading-[1.6]">
 
-                        <div>
-                            Bayraklı / İzmir<br>
-                            <span class="opacity-50 text-[11px]">Güncel konum için haritayı açın</span>
-                        </div>
 
                         <div>
-                            <div class="opacity-50 text-[11px] uppercase tracking-widest">Çalışma Saatleri</div>
+
+                            Bayraklı / İzmir<br>
+
+                            <span class="opacity-50 text-[11px]">
+                                Güncel konum için haritayı açın
+                            </span>
+
+                        </div>
+
+
+                        <div>
+
+                            <div class="opacity-50 text-[11px] uppercase tracking-widest">
+                                Çalışma Saatleri
+                            </div>
+
                             <div class="mt-1">
+
                                 Pzt - Cmt: 09:00 - 20:00<br>
                                 Pazar: 11:00 - 19:00 (Randevulu)
+
                             </div>
+
                         </div>
+
 
                         <a href="https://maps.app.goo.gl/TfvUZXLeFGgQmGH47"
                            target="_blank"
                            rel="noopener noreferrer"
                            class="inline-flex items-center gap-1.5 text-white text-[12px] font-semibold mt-1 hover:text-roseGold transition-colors">
+
                             Haritada Aç
-                            <i data-lucide="arrow-up-right" class="w-3.5 h-3.5"></i>
+
+                            <i data-lucide="arrow-up-right"
+                               class="w-3.5 h-3.5"></i>
+
                         </a>
 
                     </div>
+
                 </div>
 
+
                 <div class="rounded-[20px] bg-white/[0.04] border border-white/10 p-5">
+
 
                     <div class="text-[11px] tracking-[0.2em] uppercase font-bold text-white/40">
                         Hızlı Randevu
                     </div>
 
+
                     <p class="mt-3 text-[13px] leading-[1.6] opacity-70">
-                        Son 24 saatte 18 kişi bu sayfadan randevu aldı. Yerinizi ayırtın.
+
+                        Son 24 saatte 18 kişi bu sayfadan randevu aldı.
+                        Yerinizi ayırtın.
+
                     </p>
 
+
                     <div class="mt-4 h-2 bg-white/10 rounded-full overflow-hidden">
+
                         <div class="h-full w-[68%] gold-gradient rounded-full"></div>
+
                     </div>
+
 
                     <div class="mt-2 flex justify-between text-[11px] opacity-50">
+
                         <span>Doluluk</span>
                         <span>%68</span>
+
                     </div>
 
-                    <a href="#randevu" class="mt-5 h-11 w-full rounded-full bg-white text-ink font-semibold text-[13px] flex items-center justify-center gap-2 hover:bg-pudra transition-colors">
+
+                    <a href="#randevu"
+                       class="mt-5 h-11 w-full rounded-full bg-white text-ink font-semibold text-[13px] flex items-center justify-center gap-2 hover:bg-pudra transition-colors">
+
                         Randevu Al
-                        <i data-lucide="arrow-right" class="w-4 h-4"></i>
+
+                        <i data-lucide="arrow-right"
+                           class="w-4 h-4"></i>
+
                     </a>
 
+
                     <div class="mt-3 flex items-center gap-1.5 justify-center text-[11px] opacity-50">
-                        <i data-lucide="lock" class="w-3 h-3"></i>
+
+                        <i data-lucide="lock"
+                           class="w-3 h-3"></i>
+
                         Bilgileriniz KVKK ile korunur
+
                     </div>
+
                 </div>
+
             </div>
+
 
             <div class="mt-16 pt-8 border-t border-white/10 flex flex-col md:flex-row gap-4 justify-between items-center text-[11px] opacity-50">
+
                 <div>
-                    © 2026 GLOW STUDIO Bayan Kuaförü • İzmir. Tüm hakları saklıdır. •
-                    <a href="#" class="underline">Aydınlatma Metni</a> •
-                    <a href="#" class="underline">Çerezler</a>
+
+                    © 2026 GLOW STUDIO Bayan Kuaförü • İzmir.
+                    Tüm hakları saklıdır. •
+
+                    <a href="#" class="underline">
+                        Aydınlatma Metni
+                    </a>
+
+                    •
+
+                    <a href="#" class="underline">
+                        Çerezler
+                    </a>
+
                 </div>
 
+
                 <div class="flex items-center gap-2">
-                    Crafted with <span class="text-roseGold">♥</span> for İzmir • 537 486 42 99
+
+                    Crafted with
+                    <span class="text-roseGold">♥</span>
+                    for İzmir • 537 486 42 99
+
                 </div>
+
             </div>
+
         </div>
+
     </footer>
+
 
     <!-- Fixed Mobile Bottom Bar -->
     <div class="fixed bottom-0 left-0 right-0 z-[60] md:hidden bg-white/95 backdrop-blur-xl border-t border-ink/10 px-2 py-2 flex gap-2">
 
-        <a href="tel:+905374864299" class="flex-1 h-[52px] rounded-full border border-ink/15 flex flex-col items-center justify-center leading-none gap-0.5">
-            <i data-lucide="phone" class="w-4 h-4"></i>
-            <span class="text-[10px] font-semibold tracking-wide">ARA</span>
+
+        <a href="tel:+905374864299"
+           class="flex-1 h-[52px] rounded-full border border-ink/15 flex flex-col items-center justify-center leading-none gap-0.5">
+
+            <i data-lucide="phone"
+               class="w-4 h-4"></i>
+
+            <span class="text-[10px] font-semibold tracking-wide">
+                ARA
+            </span>
+
         </a>
+
 
         <a href="https://wa.me/905374864299"
            target="_blank"
+           rel="noopener noreferrer"
            class="flex-1 h-[52px] rounded-full bg-[#25D366] text-white flex flex-col items-center justify-center leading-none gap-0.5 font-semibold">
-            <i data-lucide="message-circle" class="w-4 h-4 fill-white"></i>
-            <span class="text-[10px] tracking-wide">WHATSAPP</span>
+
+            <i data-lucide="message-circle"
+               class="w-4 h-4 fill-white"></i>
+
+            <span class="text-[10px] tracking-wide">
+                WHATSAPP
+            </span>
+
         </a>
 
-        <a href="#randevu" class="flex-[1.4] h-[52px] rounded-full bg-ink text-white flex items-center justify-center gap-2 text-[13px] font-semibold">
-            <i data-lucide="calendar" class="w-4 h-4"></i>
+
+        <a href="#randevu"
+           class="flex-[1.4] h-[52px] rounded-full bg-ink text-white flex items-center justify-center gap-2 text-[13px] font-semibold">
+
+            <i data-lucide="calendar"
+               class="w-4 h-4"></i>
+
             Randevu Al
+
         </a>
+
     </div>
+
 
     <!-- Toast -->
-    <div id="toast" class="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 bg-ink text-white px-5 py-3 rounded-full text-[13px] font-medium shadow-xl flex items-center gap-2.5 translate-y-20 opacity-0 pointer-events-none transition-all duration-500 z-[80]">
+    <div id="toast"
+         class="fixed bottom-24 md:bottom-6 left-1/2 -translate-x-1/2 bg-ink text-white px-5 py-3 rounded-full text-[13px] font-medium shadow-xl flex items-center gap-2.5 translate-y-20 opacity-0 pointer-events-none transition-all duration-500 z-[80]">
+
         <span class="w-6 h-6 rounded-full bg-white/10 flex items-center justify-center">
-            <i data-lucide="check" class="w-4 h-4"></i>
+
+            <i data-lucide="check"
+               class="w-4 h-4"></i>
+
         </span>
-        <span id="toastText">WhatsApp açılıyor...</span>
+
+        <span id="toastText">
+            WhatsApp açılıyor...
+        </span>
+
     </div>
 
+
     <script>
+
         lucide.createIcons();
 
+
         // Mobile Drawer
+
         const mobileBtn = document.getElementById('mobileMenuBtn');
+
         const drawer = document.getElementById('mobileDrawer');
+
         const drawerPanel = document.getElementById('drawerPanel');
+
         const drawerOverlay = document.getElementById('drawerOverlay');
+
         const closeDrawerBtn = document.getElementById('closeDrawer');
 
+
         function openDrawer(){
+
             drawer.classList.remove('pointer-events-none');
+
             drawerOverlay.classList.remove('opacity-0');
+
             drawerPanel.classList.remove('translate-x-full');
+
             document.body.style.overflow='hidden';
+
         }
+
 
         function closeDrawerFn(){
+
             drawerOverlay.classList.add('opacity-0');
+
             drawerPanel.classList.add('translate-x-full');
 
+
             setTimeout(()=>{
+
                 drawer.classList.add('pointer-events-none');
+
                 document.body.style.overflow='';
+
             },400);
+
         }
 
+
         mobileBtn?.addEventListener('click', openDrawer);
+
         closeDrawerBtn?.addEventListener('click', closeDrawerFn);
+
         drawerOverlay?.addEventListener('click', closeDrawerFn);
+
 
         document.querySelectorAll('.drawer-link').forEach(a =>
             a.addEventListener('click', closeDrawerFn)
         );
 
+
         // Status check
+
         const now = new Date();
+
         const hour = now.getHours();
+
         const isOpen = hour>=9 && hour<20;
 
+
         const statusDot = document.getElementById('statusDot');
+
         const statusPing = document.getElementById('statusPing');
+
         const statusText = document.getElementById('statusText');
 
+
         if(!isOpen){
+
             statusDot?.classList.remove('bg-emerald-400');
+
             statusDot?.classList.add('bg-amber-400');
 
+
             statusPing?.classList.remove('bg-emerald-400');
+
             statusPing?.classList.add('bg-amber-400');
 
-            statusText.textContent = 'Şu An Kapalıyız / Yarın 09:00’da Açığız';
+
+            statusText.textContent =
+                'Şu An Kapalıyız / Yarın 09:00’da Açığız';
+
         }
+
 
         // Date min today
+
         const dateInput = document.getElementById('fDate');
 
+
         if(dateInput){
-            const today = new Date().toISOString().split('T')[0];
+
+            const today =
+                new Date().toISOString().split('T')[0];
+
             dateInput.min = today;
+
             dateInput.value = today;
+
         }
 
+
         // FAQ Accordion
+
         document.querySelectorAll('.faq-item').forEach((item, idx)=>{
 
-            const btn = item.querySelector('.faq-btn');
-            const content = item.querySelector('.accordion-content');
-            const icon = item.querySelector('.faq-icon');
+            const btn =
+                item.querySelector('.faq-btn');
+
+            const content =
+                item.querySelector('.accordion-content');
+
+            const icon =
+                item.querySelector('.faq-icon');
+
 
             if(idx===0){
+
                 content.classList.add('open');
-                icon.setAttribute('data-lucide','minus');
+
+                icon.setAttribute(
+                    'data-lucide',
+                    'minus'
+                );
+
             }
+
 
             btn.addEventListener('click', ()=>{
 
-                const isOpen = content.classList.contains('open');
+                const isOpen =
+                    content.classList.contains('open');
+
 
                 document.querySelectorAll('.accordion-content')
-                    .forEach(c=>c.classList.remove('open'));
+                    .forEach(c =>
+                        c.classList.remove('open')
+                    );
+
 
                 document.querySelectorAll('.faq-icon')
-                    .forEach(i=>i.setAttribute('data-lucide','plus'));
+                    .forEach(i =>
+                        i.setAttribute(
+                            'data-lucide',
+                            'plus'
+                        )
+                    );
 
-                document.querySelectorAll('.faq-item .faq-btn span:last-child')
-                    .forEach(s=>{
-                        s.classList.remove('bg-ink','text-white');
-                        s.classList.add('bg-white','border','border-ink/10');
-                    });
+
+                document.querySelectorAll(
+                    '.faq-item .faq-btn span:last-child'
+                )
+                .forEach(s=>{
+
+                    s.classList.remove(
+                        'bg-ink',
+                        'text-white'
+                    );
+
+                    s.classList.add(
+                        'bg-white',
+                        'border',
+                        'border-ink/10'
+                    );
+
+                });
+
 
                 if(!isOpen){
 
                     content.classList.add('open');
-                    icon.setAttribute('data-lucide','minus');
 
-                    btn.querySelector('span:last-child')
-                        .classList.add('bg-ink','text-white');
+                    icon.setAttribute(
+                        'data-lucide',
+                        'minus'
+                    );
 
-                    btn.querySelector('span:last-child')
-                        .classList.remove('bg-white','border','border-ink/10');
+
+                    btn.querySelector(
+                        'span:last-child'
+                    )
+                    .classList.add(
+                        'bg-ink',
+                        'text-white'
+                    );
+
+
+                    btn.querySelector(
+                        'span:last-child'
+                    )
+                    .classList.remove(
+                        'bg-white',
+                        'border',
+                        'border-ink/10'
+                    );
+
                 }
 
+
                 lucide.createIcons();
+
             });
+
         });
 
+
         // Form -> WhatsApp
-        const form = document.getElementById('appointmentForm');
-        const toast = document.getElementById('toast');
-        const toastText = document.getElementById('toastText');
+
+        const form =
+            document.getElementById('appointmentForm');
+
+        const toast =
+            document.getElementById('toast');
+
+        const toastText =
+            document.getElementById('toastText');
+
 
         function showToast(msg){
+
             toastText.textContent = msg;
+
 
             toast.classList.remove(
                 'translate-y-20',
                 'opacity-0'
             );
 
-            setTimeout(()=>
+
+            setTimeout(() =>
                 toast.classList.add(
                     'translate-y-20',
                     'opacity-0'
                 ),
             3000);
+
         }
 
+
         form?.addEventListener('submit', (e)=>{
+
             e.preventDefault();
 
-            const name = document.getElementById('fName').value.trim();
-            const phone = document.getElementById('fPhone').value.trim().replace(/\s/g,'');
-            const service = document.getElementById('fService').value;
-            const date = document.getElementById('fDate').value;
-            const time = document.getElementById('fTime').value;
-            const note = document.getElementById('fNote').value.trim();
+
+            const name =
+                document.getElementById('fName')
+                    .value.trim();
+
+
+            const phone =
+                document.getElementById('fPhone')
+                    .value.trim()
+                    .replace(/\s/g,'');
+
+
+            const service =
+                document.getElementById('fService')
+                    .value;
+
+
+            const date =
+                document.getElementById('fDate')
+                    .value;
+
+
+            const time =
+                document.getElementById('fTime')
+                    .value;
+
+
+            const note =
+                document.getElementById('fNote')
+                    .value.trim();
+
 
             if(phone.length<10){
-                showToast('Lütfen telefon numaranızı 5374864299 formatında girin');
+
+                showToast(
+                    'Lütfen telefon numaranızı 5374864299 formatında girin'
+                );
+
                 return;
+
             }
+
 
             const prettyDate = date
                 ? new Date(date).toLocaleDateString(
@@ -1218,71 +2514,136 @@
                 )
                 : '';
 
+
             const message =
+
                 `Merhaba GLOW STUDIO! ✨%0A%0A` +
+
                 `Randevu talebim:%0A%0A` +
+
                 `👤 İsim: ${encodeURIComponent(name)}%0A` +
+
                 `📞 Tel: ${encodeURIComponent(phone)}%0A` +
+
                 `💇‍♀️ Hizmet: ${encodeURIComponent(service)}%0A` +
+
                 `📅 Tarih: ${encodeURIComponent(prettyDate)} (${date})%0A` +
+
                 `⏰ Saat: ${encodeURIComponent(time)}%0A` +
+
                 `${note ? `📝 Not: ${encodeURIComponent(note)}%0A` : ''}` +
+
                 `%0AWeb siteniz üzerinden iletiyorum. Müsaitlik için dönüş yapar mısınız?`;
+
 
             const waUrl =
                 `https://wa.me/905374864299?text=${message}`;
 
-            showToast('WhatsApp açılıyor, randevunuz hazırlanıyor...');
 
-            setTimeout(()=>
-                window.open(waUrl,'_blank'),
+            showToast(
+                'WhatsApp açılıyor, randevunuz hazırlanıyor...'
+            );
+
+
+            setTimeout(() =>
+                window.open(
+                    waUrl,
+                    '_blank'
+                ),
             600);
+
         });
+
 
         // Phone input mask simple
-        const phoneInput = document.getElementById('fPhone');
 
-        phoneInput?.addEventListener('input', (e)=>{
+        const phoneInput =
+            document.getElementById('fPhone');
 
-            let v = e.target.value
-                .replace(/\D/g,'')
-                .slice(0,10);
 
-            if(v.length>3 && v.length<=6)
-                v = v.replace(/(\d{3})(\d+)/,'$1 $2');
+        phoneInput?.addEventListener(
+            'input',
+            (e)=>{
 
-            else if(v.length>6)
-                v = v.replace(/(\d{3})(\d{3})(\d+)/,'$1 $2 $3');
+                let v =
+                    e.target.value
+                        .replace(/\D/g,'')
+                        .slice(0,10);
 
-            if(v.length>7)
-                v = v.replace(
-                    /(\d{3})(\d{3})(\d{2})(\d+)/,
-                    '$1 $2 $3 $4'
-                );
 
-            e.target.value = v;
-        });
+                if(v.length>3 && v.length<=6)
+
+                    v =
+                        v.replace(
+                            /(\d{3})(\d+)/,
+                            '$1 $2'
+                        );
+
+
+                else if(v.length>6)
+
+                    v =
+                        v.replace(
+                            /(\d{3})(\d{3})(\d+)/,
+                            '$1 $2 $3'
+                        );
+
+
+                if(v.length>7)
+
+                    v =
+                        v.replace(
+                            /(\d{3})(\d{3})(\d{2})(\d+)/,
+                            '$1 $2 $3 $4'
+                        );
+
+
+                e.target.value = v;
+
+            }
+        );
+
 
         // Smooth active nav on scroll
-        const sections = document.querySelectorAll('section[id]');
-        const navLinks = document.querySelectorAll('nav a[href^="#"]');
 
-        window.addEventListener('scroll', ()=>{
+        const sections =
+            document.querySelectorAll('section[id]');
 
-            let current='';
+        const navLinks =
+            document.querySelectorAll(
+                'nav a[href^="#"]'
+            );
 
-            sections.forEach(sec=>{
-                if(window.scrollY >= sec.offsetTop-140)
-                    current = sec.id;
-            });
 
-            navLinks.forEach(a=>{
-                a.classList.toggle(
-                    'text-gold',
-                    a.getAttribute('href') === '#'+current
-                );
-            });
-        });
+        window.addEventListener(
+            'scroll',
+            ()=>{
+
+                let current='';
+
+
+                sections.forEach(sec=>{
+
+                    if(window.scrollY >= sec.offsetTop-140)
+
+                        current = sec.id;
+
+                });
+
+
+                navLinks.forEach(a=>{
+
+                    a.classList.toggle(
+                        'text-gold',
+                        a.getAttribute('href') === '#'+current
+                    );
+
+                });
+
+            }
+        );
+
     </script>
+
 </body>
 </html>
